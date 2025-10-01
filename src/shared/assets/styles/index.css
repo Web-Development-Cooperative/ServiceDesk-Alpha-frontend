@@ -1,0 +1,174 @@
+:root {
+	font-size: 1em;
+
+	/* content */
+	--content-border-light: rgba(0, 0, 0, 0.1);
+	--content-link-light: rgba(0, 0, 0, 0.3);
+
+	/* text */
+	--text-primary: rgba(0, 0, 0, 0.85);
+	--text-complementary: rgba(0, 0, 0, 0.7);
+	--text-secondary: rgba(0, 0, 0, 0.5);
+	--text-hint: rgba(0, 0, 0, 0.3);
+	--text-light-primary: #fff;
+	--text-inverted-primary: #fff;
+	--text-info: #0072dd;
+	--text-info-heavy: #0062be;
+	--text-success-heavy: #0b8a3b;
+	--text-danger-heavy: #9f0d2e;
+
+	/* base */
+	--base-generic: rgba(0, 0, 0, 0.05);
+	--base-generic-hover: rgba(0, 0, 0, 0.15);
+	--line-generic-accent: rgba(0, 0, 0, 0.15);
+	--base-generic-active: rgba(0, 0, 0, 0.25);
+
+	--base-background: #f1f4f8;
+	--base-foreground: #ffffff;
+	--base-accent: #0084ff;
+
+	--base-semantic-info: #0084ff;
+	--base-semantic-info-hover: #0070d9;
+	--base-semantic-info-active: #0063bf;
+	--base-semantic-info-low: rgba(0, 132, 255, 0.1);
+	--base-semantic-info-low-hover: rgba(0, 132, 255, 0.2);
+	--base-semantic-info-low-active: rgba(0, 132, 255, 0.3);
+	--base-semantic-success: #10cf59;
+	--base-semantic-success-hover: #0eb04c;
+	--base-semantic-success-active: #0c9b43;
+	--base-semantic-success-low: rgba(19, 242, 104, 0.1);
+	--base-semantic-success-low-hover: rgba(19, 242, 104, 0.2);
+	--base-semantic-success-low-active: rgba(19, 242, 104, 0.3);
+	--base-semantic-danger: #ff154b;
+	--base-semantic-danger-hover: #d91240;
+	--base-semantic-danger-active: #bf1038;
+	--base-semantic-danger-low: rgba(255, 21, 75, 0.1);
+	--base-semantic-danger-low-hover: rgba(255, 21, 75, 0.2);
+	--base-semantic-danger-low-active: rgba(255, 21, 75, 0.3);
+	--base-semantic-normal: #000;
+	--base-semantic-normal-hover: #262626;
+	--base-semantic-normal-active: #262626;
+	--base-semantic-normal-low: rgba(0, 0, 0, 0.1);
+	--base-semantic-normal-low-hover: rgba(0, 0, 0, 0.2);
+	--base-semantic-normal-low-active: rgba(0, 0, 0, 0.3);
+	--base-semantic-normal-medium: rgba(0, 0, 0, 0.2);
+	--base-semantic-normal-medium-hover: rgba(0, 0, 0, 0.3);
+	--base-semantic-normal-medium-active: rgba(0, 0, 0, 0.4);
+
+	--base-semantic-info-medium: rgba(0, 132, 255, 0.2);
+	--base-semantic-info-medium-hover: rgba(0, 132, 255, 0.3);
+	--base-semantic-info-medium-active: rgba(0, 132, 255, 0.4);
+
+	--background-light-blue: #d1e8ff;
+	--background-light-green: #10cf59;
+	--background-light-pink: #ffd1d1;
+
+	/* Line */
+	--line-generic: rgba(0, 0, 0, 0.1);
+
+	/* shadow  */
+	/* --shadow-header: 0px 4px 8px 0px rgba(57, 113, 164, 0.25); */
+
+	/* fonts */
+	/* --fs-header-xl: clamp(1.25rem, 1rem + 1.25vw, 2.5rem);
+	--header-xl: 700 var(--fs-header-xl) / 1.175 'Raleway'; */
+
+	/* indent */
+	/* --horizontal-padding: clamp(2.25rem, -3.417rem + 11.81vw, 10.75rem);
+	--padding-x-employee: clamp(1.5rem, -4.667rem + 12.85vw, 10.75rem); */
+}
+.dark {
+	/* content */
+
+	/* backgroung */
+
+	/* shadow  */
+}
+
+/* connect fonts */
+/* Inter */
+@font-face {
+	font-family: 'Inter';
+	src: url('../fonts/Inter/Inter_24pt-Regular.woff2') format('woff2'),
+		url('../fonts/Inter/Inter_24pt-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('../fonts/Inter/Inter_24pt-Medium.woff2') format('woff2'),
+		url('../fonts/Inter/Inter_24pt-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('../fonts/Inter/Inter_28pt-SemiBold.woff2') format('woff2'),
+		url('../fonts/Inter/Inter_28pt-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('../fonts/Inter/Inter_28pt-ExtraBold.woff2') format('woff2'),
+		url('../fonts/Inter/Inter_28pt-ExtraBold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+}
+
+/* my reset */
+h1 {
+	font-family: 'Inter';
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	color: var(--text-primary);
+}
+h3 {
+	/* font: var(--header-m); */
+}
+h5 {
+	color: var(--text-primary);
+
+	font-family: 'Inter';
+	font-size: 1.5rem;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+a {
+	cursor: pointer;
+}
+p {
+	/* font: var(--text-s); */
+}
+img,
+svg {
+	user-select: none;
+}
+svg {
+	flex-shrink: 0;
+}
+
+/* main css */
+body {
+	background: var(--base-background);
+
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+}
+body,
+#root,
+.App {
+	min-height: 100vh;
+}
+.App {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	max-width: 120rem;
+	margin: 0 auto;
+	background-color: var(--base-background);
+}

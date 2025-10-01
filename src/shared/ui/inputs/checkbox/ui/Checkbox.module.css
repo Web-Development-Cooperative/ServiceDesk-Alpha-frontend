@@ -1,0 +1,15 @@
+.checkbox {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+
+	aspect-ratio: 1/1;
+	width: 20px;
+	height: 20px;
+	border-radius: 6px;
+	border: 1px solid var(--line-generic-accent);
+}
+.center {
+	margin: auto;
+}

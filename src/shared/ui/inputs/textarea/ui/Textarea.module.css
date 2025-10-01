@@ -1,0 +1,32 @@
+.base-textarea {
+	min-height: 40px;
+	max-height: 300px;
+	padding: 0.5625rem 0.8125rem;
+	border-radius: 0.625rem;
+	border: 1px solid var(--content-border-light);
+	outline: none;
+
+	resize: vertical;
+	transition: border 0.2s ease-in-out;
+
+	&:focus-within {
+		border: 1px dashed var(--base-accent);
+	}
+
+	& > textarea {
+		font-size: 0.875rem;
+		font-weight: 400;
+		color: var(--text-primary);
+
+		&::placeholder {
+			color: var(--content-link-light);
+		}
+	}
+}
+.isStretch {
+	width: 100% !important;
+}
+.isDisabled {
+	background-color: var(--content-border-light);
+	border-color: transparent;
+}

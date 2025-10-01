@@ -1,0 +1,23 @@
+.base-input {
+	padding: 0.5625rem 0.8125rem;
+	border-radius: 0.625rem;
+	border: 1px solid var(--content-border-light);
+
+	& > input {
+		font-size: 0.875rem;
+		font-weight: 400;
+		color: var(--text-primary);
+
+		&::placeholder {
+			color: var(--content-link-light);
+		}
+	}
+}
+
+.isStretch {
+	width: 100%;
+}
+.isDisabled {
+	background-color: var(--content-border-light);
+	border-color: transparent;
+}

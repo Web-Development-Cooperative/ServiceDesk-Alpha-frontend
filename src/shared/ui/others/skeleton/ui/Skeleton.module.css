@@ -1,0 +1,43 @@
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	position: relative;
+	padding: 5px;
+	border-radius: 7px;
+
+	/* background-color: #598cdf; */
+	overflow: hidden;
+}
+.text {
+	font-size: 0.75rem;
+	filter: blur(3px);
+}
+.skeleton {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle, #ff7a18 10%, #af0069 50%, #6a11cb 80%);
+	/* background-color: rgb(0, 0, 0); */
+	background-size: 400% 50%;
+	animation: shimmer 7s cubic-bezier(0.33, 0.63, 0.7, 0.52) infinite;
+	opacity: 0.4;
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+@keyframes shimmer {
+	0% {
+		/* background-position: -500px 0; */
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -400% 0;
+	}
+}
