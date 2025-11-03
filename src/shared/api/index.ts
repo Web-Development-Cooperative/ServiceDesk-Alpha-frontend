@@ -1,1 +1,1 @@
-export { unauthenticatedRequest } from './makeRequest';
+export { baseApi } from './baseApi';

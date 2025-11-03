@@ -1,53 +1,64 @@
 {
-	"name": "vite-project",
-	"private": true,
-	"version": "0.0.0",
-	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"build": "tsc -b && vite build",
-		"lint": "eslint .",
-		"test": "vitest",
-		"preview": "vite preview",
-		"prepare": "husky install"
-	},
-	"dependencies": {
-		"@reduxjs/toolkit": "^2.9.0",
-		"axios": "^1.12.1",
-		"clsx": "^2.1.1",
-		"react": "^19.1.1",
-		"react-dom": "^19.1.1",
-		"react-redux": "^9.2.0",
-		"react-router": "^7.9.1",
-		"react-toastify": "^11.0.5"
-	},
-	"devDependencies": {
-		"@eslint/js": "^9.33.0",
-		"@testing-library/jest-dom": "^6.8.0",
-		"@testing-library/react": "^16.3.0",
-		"@types/jest": "^30.0.0",
-		"@types/react": "^19.1.10",
-		"@types/react-dom": "^19.1.7",
-		"@vitejs/plugin-react": "^4.7.0",
-		"@vitejs/plugin-react-swc": "^4.0.0",
-		"eslint": "^9.33.0",
-		"eslint-import-resolver-alias": "^1.1.2",
-		"eslint-plugin-import": "^2.31.0",
-		"eslint-plugin-react-hooks": "^5.2.0",
-		"eslint-plugin-react-refresh": "^0.4.20",
-		"globals": "^16.3.0",
-		"husky": "^8.0.0",
-		"jsdom": "^27.0.0",
-		"lint-staged": "^15.5.2",
-		"react-testing-library": "^8.0.1",
-		"typescript": "~5.8.3",
-		"typescript-eslint": "^8.39.1",
-		"vite": "^7.1.2",
-		"vitest": "^3.2.4"
-	},
-	"lint-staged": {
-		"**/*.{ts,tsx,css,scss}": [
-			"npm run lint"
-		]
-	}
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "test": "vitest",
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@react-keycloak/web": "^3.4.0",
+    "@reduxjs/toolkit": "^2.9.0",
+    "axios": "^1.12.1",
+    "clsx": "^2.1.1",
+    "js-cookie": "^3.0.5",
+    "jwt-decode": "^4.0.0",
+    "keycloak-js": "^26.2.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-redux": "^9.2.0",
+    "react-router": "^7.9.1",
+    "react-toastify": "^11.0.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^30.0.0",
+    "@types/js-cookie": "^3.0.6",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "@vitejs/plugin-react-swc": "^4.0.0",
+    "eslint": "^9.33.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "husky": "^8.0.0",
+    "jsdom": "^27.0.0",
+    "lint-staged": "^15.5.2",
+    "msw": "^2.11.6",
+    "react-testing-library": "^8.0.1",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.39.1",
+    "vite": "^7.1.2",
+    "vitest": "^3.2.4"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,css,scss}": [
+      "npm run lint"
+    ]
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
 }

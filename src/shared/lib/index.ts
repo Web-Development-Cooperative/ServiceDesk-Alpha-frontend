@@ -1,2 +1,2 @@
-export { mapArrNumberToString } from './mapArrNumberToString/mapArrNumberToString';
 export { useAppDispatch, useAppSelector } from './store/redux';
+export { env } from './libEnv';

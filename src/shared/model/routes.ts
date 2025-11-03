@@ -1,23 +1,18 @@
 const ROUTES = {
+	LOGIN: '/login',
 	HOME: '/',
-	USERS: '/users',
-	USER: '/users/:userId',
 } as const;
 
 const ADAPTER_ROUTES_BREADCRUMBS = {
 	'/': 'Главная',
-	'/users': 'Пользователи',
-	'/users/:userId': 'Пользователь',
+	'/login': 'Вход',
 } as const;
 
 type PathParams = {
+	[ROUTES.LOGIN]: {
+		objectId: string;
+	};
 	[ROUTES.HOME]: {
-		objectId: string;
-	};
-	[ROUTES.USERS]: {
-		objectId: string;
-	};
-	[ROUTES.USER]: {
 		objectId: string;
 	};
 };

@@ -1,12 +1,14 @@
-import { Provider } from 'react-redux';
-
-import { store } from '~~>app/store';
-
+import { KeycloakProvider } from '../../keycloakProvider/ui/KeycloakProvider';
+import { StoreProvider } from '../../storeProvider/ui/StoreProvider';
 import type { FC } from 'react';
 import type { ProvidersProps } from '../model/types';
 
 const Providers: FC<ProvidersProps> = ({ children }) => {
-	return <Provider store={store}>{children}</Provider>;
+	return (
+		<KeycloakProvider>
+			<StoreProvider>{children}</StoreProvider>
+		</KeycloakProvider>
+	);
 };
 
 export { Providers };

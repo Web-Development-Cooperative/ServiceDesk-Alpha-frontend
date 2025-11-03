@@ -6,11 +6,6 @@ const navData = [
 		text: ADAPTER_ROUTES_BREADCRUMBS[ROUTES.HOME],
 		path: ROUTES.HOME,
 	},
-	{
-		id: 2,
-		text: ADAPTER_ROUTES_BREADCRUMBS[ROUTES.USERS],
-		path: ROUTES.USERS,
-	},
 ];
 
 export { navData };

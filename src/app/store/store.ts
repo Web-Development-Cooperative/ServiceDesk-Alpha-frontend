@@ -1,16 +1,24 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, createDynamicMiddleware } from '@reduxjs/toolkit';
 
-import { userSlice } from '~~>entities/user';
+import { baseApi } from '~~>shared/api';
+
+import { rootReducer } from './rootReducer';
+
+const dynamicMiddleware = createDynamicMiddleware();
 
 const store = configureStore({
-	reducer: {
-		[userSlice.name]: userSlice.reducer,
-	},
+	reducer: rootReducer,
 	middleware: (getDefaultMiddleware) =>
-		getDefaultMiddleware({ serializableCheck: false }),
+		getDefaultMiddleware({
+			serializableCheck: {
+				ignoredActions: ['persist/PERSIST'],
+			},
+		}).concat(dynamicMiddleware.middleware),
 });
 
-export { store };
+rootReducer.inject(baseApi);
+dynamicMiddleware.addMiddleware(baseApi.middleware);
 
+export { store };
 export type AppState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
