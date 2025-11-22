@@ -35,33 +35,38 @@
 
 	/* background */
 	--background-base: var(--white);
-	--background-icon-base: var(--smoky-white-light-darker);
-	--background-icon-base-hover: var(--gainsborough);
-	--background-icon-base-focus: var(--forest-wolf);
+	--background-icon-notification: var(--smoky-white-light-darker);
+	--background-icon-notification-hover: var(--gainsborough);
+	--background-icon-notification-active: var(--forest-wolf);
+	--background-icon-badge: var(--red);
 	--background-icon-danger-hover: var(--pink-lavender);
 	--background-icon-primary-hover: var(--blue-alice);
 	--background-avatar-img: var(--deep-carmine-pink);
 	--background-avatar-card-hover: var(--smoky-white-darker);
-	--background-avatar-card-focus: var(--gainsborough-darker);
+	--background-avatar-card-active: var(--gainsborough-darker);
 	--background-button-base: var(--white);
 	--background-button-base-hover: var(--white);
-	--background-button-base-focus: var(--deep-carmine-pink);
+	--background-button-base-active: var(--deep-carmine-pink);
 	--background-button-danger: var(--red);
 	--background-button-danger-hover: var(--transport-red);
-	--background-button-danger-focus: var(--red-burgundy);
+	--background-button-danger-active: var(--red-burgundy);
 	--background-input: var(--white);
 	--background-table-row: var(--white);
 	--background-table-row-hover: var(--gainsborough-darker);
-	--background-table-row-focus: var(--light-grey);
+	--background-table-row-active: var(--light-grey);
+	--background-status-badge-primary: var(--blue-alice);
+	--background-status-badge-progress: var(--cosmic-cream);
+	--background-status-badge-success: var(--pearl-white);
+	--background-status-badge-danger: var(--pink-lavender);
 
 	/* border */
 	--border-base: var(--periwinkle-crayola);
 	--border-input: var(--periwinkle-crayola);
 	--border-input-hover: var(--slate-grey);
-	--border-input-focus: var(--red-burgundy);
+	--border-input-active: var(--red-burgundy);
 	--border-button-base: var(--periwinkle-crayola);
 	--border-button-base-hover: var(--slate-grey);
-	--border-button-base-focus: var(--deep-carmine-pink);
+	--border-button-base-active: var(--deep-carmine-pink);
 
 	/* text */
 	--text-base: var(--black);
@@ -70,21 +75,26 @@
 	--text-placeholder: var(--light-grey-darker);
 	--text-navigation: var(--slate-grey);
 	--text-navigation-hover: var(--black);
-	--text-navigation-focus: var(--black);
+	--text-navigation-active: var(--black);
 	--text-button-base: var(--slate-grey);
 	--text-button-base-hover: var(--slate-grey);
-	--text-button-base-focus: var(--white);
+	--text-button-base-active: var(--white);
 	--text-button-base-danger: var(--white);
 	--text-active: var(--black);
 	--text-active-hover: var(--deep-carmine-pink);
-	--text-active-focus: var(--transport-red);
+	--text-active-active: var(--transport-red);
+	--text-status-badge-primary: var(--denim-blue);
+	--text-status-badge-progress: var(--bright-orange);
+	--text-status-badge-success: var(--transport-green);
+	--text-status-badge-danger: var(--red);
 
 	/* shadow  */
 	--shadow-statistic-card: 0px 1px 0px 0px var(--black-25a) inset;
 
 	/* sizes */
 	--size-border-width-base: 1px;
-	--size-border-radius-base: 16px;
+	--size-border-radius-base: 7px;
+	--size-border-radius-icon-base: 7px;
 
 	/* fonts */
 	--fs-base-s: clamp(0.5rem, 0.409rem + 0.45vw, 0.75rem);
@@ -94,6 +104,8 @@
 	--fs-base-l: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
 	--base-l: 600 var(--fs-base-l) / 1 'Noto Sans';
 
+	--fs-search-s: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
+	--search-s: 400 var(--fs-search-m) / 1 'Noto Sans';
 	--fs-avatar-m: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
 	--avatar-m: 500 var(--fs-avatar-m) / 1 'Noto Sans';
 	--fs-note-m: clamp(0.625rem, 0.443rem + 0.91vw, 1.125rem);
@@ -102,6 +114,8 @@
 	--big-number-m: 500 var(--fs-big-number-m) / 1 'Noto Sans';
 	--fs-navigation-m: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
 	--navigation-m: 500 var(--fs-navigation-m) / 1 'Noto Sans Display';
+	--fs-badge-m: clamp(0.5rem, 0.409rem + 0.45vw, 0.75rem);
+	--badge-m: 500 var(--fs-badge-m) / 1 'Noto Sans Display';
 	--fs-button-l: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
 	--button-l: 600 var(--fs-button-l) / 1 'Noto Sans';
 	--fs-paggination-l: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);
@@ -109,6 +123,10 @@
 
 	--fs-header-m: clamp(1.25rem, 1.068rem + 0.91vw, 1.75rem);
 	--header-m: 500 var(--fs-header-xl) / 1.175 'Noto Sans';
+
+	/* effects */
+	--time-to-do: 0.3s;
+	--type-effect: ease-in-out;
 
 	/* indent */
 	/* --horizontal-padding: clamp(2.25rem, -3.417rem + 11.81vw, 10.75rem);

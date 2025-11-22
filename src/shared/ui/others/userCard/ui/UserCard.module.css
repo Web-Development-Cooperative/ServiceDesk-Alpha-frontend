@@ -1,0 +1,57 @@
+.user-card {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	column-gap: 14px;
+
+	padding: 8px 16px;
+	border-radius: var(--size-border-radius-base);
+
+	transition: background-color var(--time-to-do) var(--type-effect);
+
+	&:hover {
+		background-color: var(--background-avatar-card-hover);
+	}
+	&:active {
+		background-color: var(--background-avatar-card-active);
+	}
+}
+.avatar {
+	max-width: 40px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+
+	background-color: var(--background-avatar-img);
+	overflow: hidden;
+
+	font: var(--base-l);
+	color: var(--text-light-base);
+
+	&:not(:has(img)) {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		padding: 0 10px;
+	}
+
+	& > img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+}
+.data {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1px;
+}
+.user-name {
+	font: var(--avatar-m);
+	color: var(--text-base);
+}
+.role {
+	font: var(--base-s);
+	color: var(--text-description);
+}
