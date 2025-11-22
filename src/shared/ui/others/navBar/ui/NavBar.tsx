@@ -1,7 +1,4 @@
-import { NavLink } from 'react-router';
-import { clsx } from 'clsx';
-
-import { UniList } from '~~>shared/ui/others';
+import { NavigationText, UniList } from '~~>shared/ui/others';
 
 import styles from './NavBar.module.css';
 import type { ReactNode } from 'react';
@@ -13,22 +10,13 @@ const NavBar = <T extends { id: number | string; text: string; path: string }>(
 	const { items, ...rest } = props;
 
 	const renderItem: (_item: T, _index: number) => ReactNode = (item, _) => (
-		<NavLink
-			key={item.path}
-			className={({ isActive }) =>
-				clsx(styles['nav-link'], {
-					[styles['active-link']]: isActive,
-				})
-			}
-			to={item.path}
-			end
-		>
+		<NavigationText key={item.path} to={item.path} end>
 			{item.text}
-		</NavLink>
+		</NavigationText>
 	);
 
 	return (
-		<nav className={styles['nav-bar']} {...rest}>
+		<nav {...rest}>
 			<UniList
 				className={styles.list}
 				items={items}

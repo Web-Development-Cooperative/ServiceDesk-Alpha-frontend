@@ -1,4 +1,4 @@
-import { NavBar } from '~~>features/navBar';
+import { NavBar } from '~~>shared/ui/others';
 
 import { navData } from '../lib/navData';
 

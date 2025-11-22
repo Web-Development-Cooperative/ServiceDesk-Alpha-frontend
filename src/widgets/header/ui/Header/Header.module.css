@@ -1,0 +1,9 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	column-gap: 39px;
+
+	width: 100%;
+	padding: 8px 54px 8px 35px;
+}

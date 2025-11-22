@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { createBrowserRouter } from 'react-router';
+import { createBrowserRouter, Navigate } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
 
 import { AuthProvider, GuestProvider } from '~~>app/providers';
@@ -7,7 +7,8 @@ import { ROUTES } from '~~>shared/model/routes';
 
 const HeaderLayout = lazy(() => import('~~>app/layouts/mainLayout'));
 const LoginPage = lazy(() => import('~~>pages/login'));
-const HomePage = lazy(() => import('~~>pages/home'));
+const ApplicationsPage = lazy(() => import('~~>pages/applications'));
+const BranchesPage = lazy(() => import('~~>pages/branches'));
 
 const router = createBrowserRouter([
 	{
@@ -32,9 +33,21 @@ const router = createBrowserRouter([
 		children: [
 			{
 				index: true,
+				element: <Navigate to={ROUTES.BRANCHES} />,
+			},
+			{
+				path: ROUTES.BRANCHES,
 				element: (
 					<Suspense fallback={<div>Загрузка компонента...</div>}>
-						<HomePage />
+						<BranchesPage />
+					</Suspense>
+				),
+			},
+			{
+				path: ROUTES.APPLICATIONS,
+				element: (
+					<Suspense fallback={<div>Загрузка компонента...</div>}>
+						<ApplicationsPage />
 					</Suspense>
 				),
 			},

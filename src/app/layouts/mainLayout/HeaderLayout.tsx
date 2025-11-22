@@ -1,13 +1,11 @@
 import { Outlet } from 'react-router';
 
-import { MainNavigation } from '~~>widgets/mainNavigation';
-import { Breadcrumbs } from '~~>features/breadcrumbs';
+import { Header } from '~~>widgets/header';
 
 const HeaderLayout = () => {
 	return (
 		<>
-			<Breadcrumbs />
-			<MainNavigation />
+			<Header />
 			<Outlet />
 		</>
 	);

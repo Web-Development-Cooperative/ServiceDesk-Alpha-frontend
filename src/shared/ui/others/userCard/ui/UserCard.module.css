@@ -18,6 +18,7 @@
 }
 .avatar {
 	max-width: 40px;
+	min-width: 40px;
 	aspect-ratio: 1/1;
 	border-radius: 50%;
 

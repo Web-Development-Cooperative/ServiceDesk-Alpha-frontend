@@ -1,33 +1,10 @@
-import { useState, type ComponentProps } from 'react';
+import styles from './ApplicationsPage.module.css';
 
-import { LoadFiles } from '~~>features/loadFiles';
-import {
-	ActiveIcon,
-	ActiveText,
-	NavigationText,
-	Notification,
-	SearchBar,
-	StatusBadge,
-	UserCard,
-} from '~~>shared/ui/others';
-import { PencilEdit, Plus } from '~~>shared/ui/icons';
-import { Select } from '~~>shared/ui/inputs';
-import { BaseButton } from '~~>shared/ui/buttons';
-
-import styles from './HomePage.module.css';
-
-const HomePage = () => {
-	const [value, setValue] = useState('');
-	const [valuse, setValuse] = useState<
-		ComponentProps<typeof Select>['options'][number]
-	>({ value: NaN, label: '' });
-
-	console.log(valuse);
-
+const ApplicationsPage = () => {
 	return (
 		<div className={styles['home-page']}>
-			<h1>home-page</h1>
-			<ActiveIcon typeActive="danger">
+			<h1>application-page</h1>
+			{/* <ActiveIcon typeActive="danger">
 				<PencilEdit />
 			</ActiveIcon>
 			<Notification data="9" />
@@ -60,9 +37,9 @@ const HomePage = () => {
 				value={valuse.label}
 				onChange={(obj) => setValuse(obj)}
 			/>
-			<LoadFiles />
+			<LoadFiles /> */}
 		</div>
 	);
 };
 
-export { HomePage };
+export { ApplicationsPage };

@@ -1,11 +1,15 @@
 const ROUTES = {
 	LOGIN: '/login',
 	HOME: '/',
+	BRANCHES: '/branches',
+	APPLICATIONS: '/applications',
 } as const;
 
 const ADAPTER_ROUTES_BREADCRUMBS = {
 	'/': 'Главная',
 	'/login': 'Вход',
+	'/branches': 'Филиалы',
+	'/applications': 'Мои заявки',
 } as const;
 
 type PathParams = {
@@ -13,6 +17,12 @@ type PathParams = {
 		objectId: string;
 	};
 	[ROUTES.HOME]: {
+		objectId: string;
+	};
+	[ROUTES.BRANCHES]: {
+		objectId: string;
+	};
+	[ROUTES.APPLICATIONS]: {
 		objectId: string;
 	};
 };
