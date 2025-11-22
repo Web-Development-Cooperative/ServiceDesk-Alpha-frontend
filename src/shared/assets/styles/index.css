@@ -1,77 +1,114 @@
 :root {
 	font-size: 1em;
 
-	/* content */
-	--content-border-light: rgba(0, 0, 0, 0.1);
-	--content-link-light: rgba(0, 0, 0, 0.3);
+	/* used colors */
+	--black-25a: rgba(0, 0, 0, 0.25);
+
+	--black: rgba(0, 0, 0, 1); /* #000000 */
+	--dull-grey: rgba(100, 100, 100, 1); /* #646464 */
+	--slate-grey: rgba(108, 118, 132, 1); /* #6C7684 */
+	--pearl-dark-grey: rgba(132, 132, 132, 1); /* #848484 */
+	--light-grey-darker: rgba(179, 179, 179, 1); /* #B3B3B3 */
+	--light-grey: rgba(216, 216, 216, 1); /* #D8D8D8 */
+	--forest-wolf: rgba(221, 217, 217, 1); /* #DDD9D9 */
+	--gainsborough-darker: rgba(228, 228, 228, 1); /* #E4E4E4 */
+	--gainsborough: rgba(231, 230, 230, 1); /* #E7E6E6 */
+	--periwinkle-crayola: rgba(232, 235, 240, 1); /* #E8EBF0 */
+	--pearl-white: rgba(232, 245, 233, 1); /* #E8F5E9 */
+	--smoky-white-darker: rgba(241, 241, 241, 1); /* #F1F1F1 */
+	--smoky-white-light-darker: rgba(245, 245, 245, 1); /* #F5F5F5 */
+	--smoky-white: rgba(247, 247, 247, 1); /* #F7F7F7 */
+	--white: rgba(255, 255, 255, 1); /* #FFFFFF */
+	--red-burgundy: rgba(179, 0, 0, 1); /* #B30000 */
+	--transport-red: rgba(207, 0, 0, 1); /* #CF0000 */
+	--red: rgba(255, 0, 0, 1); /* #FF0000 */
+	--deep-carmine-pink: rgba(239, 49, 36, 1); /* #EF3124 */
+	--pink-lavender: rgba(255, 235, 238, 1); /* #FFEBEE */
+	--blue-alice: rgba(227, 242, 253, 1); /* #E3F2FD */
+	--denim-blue: rgba(21, 108, 198, 1); /* #156CC6 */
+	--twitter-color: rgba(33, 150, 243, 1); /* #2196F3 */
+	--cosmic-cream: rgba(255, 244, 230, 1); /* #FFF4E6 */
+	--signal-orange: rgba(255, 152, 0, 1); /* #FF9800 */
+	--bright-orange: rgba(255, 107, 0, 1); /* #FF6B00 */
+	--transport-green: rgba(50, 138, 62, 1); /* #328A3E */
+	--brilliant-green: rgba(76, 175, 80, 1); /* #4CAF50 */
+
+	/* background */
+	--background-base: var(--white);
+	--background-icon-base: var(--smoky-white-light-darker);
+	--background-icon-base-hover: var(--gainsborough);
+	--background-icon-base-focus: var(--forest-wolf);
+	--background-icon-danger-hover: var(--pink-lavender);
+	--background-icon-primary-hover: var(--blue-alice);
+	--background-avatar-img: var(--deep-carmine-pink);
+	--background-avatar-card-hover: var(--smoky-white-darker);
+	--background-avatar-card-focus: var(--gainsborough-darker);
+	--background-button-base: var(--white);
+	--background-button-base-hover: var(--white);
+	--background-button-base-focus: var(--deep-carmine-pink);
+	--background-button-danger: var(--red);
+	--background-button-danger-hover: var(--transport-red);
+	--background-button-danger-focus: var(--red-burgundy);
+	--background-input: var(--white);
+	--background-table-row: var(--white);
+	--background-table-row-hover: var(--gainsborough-darker);
+	--background-table-row-focus: var(--light-grey);
+
+	/* border */
+	--border-base: var(--periwinkle-crayola);
+	--border-input: var(--periwinkle-crayola);
+	--border-input-hover: var(--slate-grey);
+	--border-input-focus: var(--red-burgundy);
+	--border-button-base: var(--periwinkle-crayola);
+	--border-button-base-hover: var(--slate-grey);
+	--border-button-base-focus: var(--deep-carmine-pink);
 
 	/* text */
-	--text-primary: rgba(0, 0, 0, 0.85);
-	--text-complementary: rgba(0, 0, 0, 0.7);
-	--text-secondary: rgba(0, 0, 0, 0.5);
-	--text-hint: rgba(0, 0, 0, 0.3);
-	--text-light-primary: #fff;
-	--text-inverted-primary: #fff;
-	--text-info: #0072dd;
-	--text-info-heavy: #0062be;
-	--text-success-heavy: #0b8a3b;
-	--text-danger-heavy: #9f0d2e;
-
-	/* base */
-	--base-generic: rgba(0, 0, 0, 0.05);
-	--base-generic-hover: rgba(0, 0, 0, 0.15);
-	--line-generic-accent: rgba(0, 0, 0, 0.15);
-	--base-generic-active: rgba(0, 0, 0, 0.25);
-
-	--base-background: #f1f4f8;
-	--base-foreground: #ffffff;
-	--base-accent: #0084ff;
-
-	--base-semantic-info: #0084ff;
-	--base-semantic-info-hover: #0070d9;
-	--base-semantic-info-active: #0063bf;
-	--base-semantic-info-low: rgba(0, 132, 255, 0.1);
-	--base-semantic-info-low-hover: rgba(0, 132, 255, 0.2);
-	--base-semantic-info-low-active: rgba(0, 132, 255, 0.3);
-	--base-semantic-success: #10cf59;
-	--base-semantic-success-hover: #0eb04c;
-	--base-semantic-success-active: #0c9b43;
-	--base-semantic-success-low: rgba(19, 242, 104, 0.1);
-	--base-semantic-success-low-hover: rgba(19, 242, 104, 0.2);
-	--base-semantic-success-low-active: rgba(19, 242, 104, 0.3);
-	--base-semantic-danger: #ff154b;
-	--base-semantic-danger-hover: #d91240;
-	--base-semantic-danger-active: #bf1038;
-	--base-semantic-danger-low: rgba(255, 21, 75, 0.1);
-	--base-semantic-danger-low-hover: rgba(255, 21, 75, 0.2);
-	--base-semantic-danger-low-active: rgba(255, 21, 75, 0.3);
-	--base-semantic-normal: #000;
-	--base-semantic-normal-hover: #262626;
-	--base-semantic-normal-active: #262626;
-	--base-semantic-normal-low: rgba(0, 0, 0, 0.1);
-	--base-semantic-normal-low-hover: rgba(0, 0, 0, 0.2);
-	--base-semantic-normal-low-active: rgba(0, 0, 0, 0.3);
-	--base-semantic-normal-medium: rgba(0, 0, 0, 0.2);
-	--base-semantic-normal-medium-hover: rgba(0, 0, 0, 0.3);
-	--base-semantic-normal-medium-active: rgba(0, 0, 0, 0.4);
-
-	--base-semantic-info-medium: rgba(0, 132, 255, 0.2);
-	--base-semantic-info-medium-hover: rgba(0, 132, 255, 0.3);
-	--base-semantic-info-medium-active: rgba(0, 132, 255, 0.4);
-
-	--background-light-blue: #d1e8ff;
-	--background-light-green: #10cf59;
-	--background-light-pink: #ffd1d1;
-
-	/* Line */
-	--line-generic: rgba(0, 0, 0, 0.1);
+	--text-base: var(--black);
+	--text-light-base: var(--white);
+	--text-description: var(--slate-grey);
+	--text-placeholder: var(--light-grey-darker);
+	--text-navigation: var(--slate-grey);
+	--text-navigation-hover: var(--black);
+	--text-navigation-focus: var(--black);
+	--text-button-base: var(--slate-grey);
+	--text-button-base-hover: var(--slate-grey);
+	--text-button-base-focus: var(--white);
+	--text-button-base-danger: var(--white);
+	--text-active: var(--black);
+	--text-active-hover: var(--deep-carmine-pink);
+	--text-active-focus: var(--transport-red);
 
 	/* shadow  */
-	/* --shadow-header: 0px 4px 8px 0px rgba(57, 113, 164, 0.25); */
+	--shadow-statistic-card: 0px 1px 0px 0px var(--black-25a) inset;
+
+	/* sizes */
+	--size-border-width-base: 1px;
+	--size-border-radius-base: 16px;
 
 	/* fonts */
-	/* --fs-header-xl: clamp(1.25rem, 1rem + 1.25vw, 2.5rem);
-	--header-xl: 700 var(--fs-header-xl) / 1.175 'Raleway'; */
+	--fs-base-s: clamp(0.5rem, 0.409rem + 0.45vw, 0.75rem);
+	--base-s: 400 var(--fs-base-s) / 1 'Noto Sans';
+	--fs-base-m: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+	--base-m: 500 var(--fs-base-m) / 1 'Noto Sans';
+	--fs-base-l: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
+	--base-l: 600 var(--fs-base-l) / 1 'Noto Sans';
+
+	--fs-avatar-m: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
+	--avatar-m: 500 var(--fs-avatar-m) / 1 'Noto Sans';
+	--fs-note-m: clamp(0.625rem, 0.443rem + 0.91vw, 1.125rem);
+	--note-m: 500 var(--fs-note-m) / 1 'Noto Sans';
+	--fs-big-number-m: clamp(1.5rem, 1.318rem + 0.91vw, 2rem);
+	--big-number-m: 500 var(--fs-big-number-m) / 1 'Noto Sans';
+	--fs-navigation-m: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
+	--navigation-m: 500 var(--fs-navigation-m) / 1 'Noto Sans Display';
+	--fs-button-l: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+	--button-l: 600 var(--fs-button-l) / 1 'Noto Sans';
+	--fs-paggination-l: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);
+	--paggination-l: 600 var(--fs-paggination-l) / 1 'Noto Sans';
+
+	--fs-header-m: clamp(1.25rem, 1.068rem + 0.91vw, 1.75rem);
+	--header-m: 500 var(--fs-header-xl) / 1.175 'Noto Sans';
 
 	/* indent */
 	/* --horizontal-padding: clamp(2.25rem, -3.417rem + 11.81vw, 10.75rem);
@@ -86,62 +123,65 @@
 }
 
 /* connect fonts */
-/* Inter */
+/* Noto_Sans */
 @font-face {
-	font-family: 'Inter';
-	src: url('../fonts/Inter/Inter_24pt-Regular.woff2') format('woff2'),
-		url('../fonts/Inter/Inter_24pt-Regular.woff') format('woff');
+	font-family: 'Noto Sans';
+	src: url('../fonts/Noto_Sans/NotoSans_Condensed-Regular.woff2')
+			format('woff2'),
+		url('../fonts/Noto_Sans/NotoSans_Condensed-Regular.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Inter';
-	src: url('../fonts/Inter/Inter_24pt-Medium.woff2') format('woff2'),
-		url('../fonts/Inter/Inter_24pt-Medium.woff') format('woff');
+	font-family: 'Noto Sans';
+	src: url('../fonts/Noto_Sans/NotoSans_Condensed-Medium.woff2')
+			format('woff2'),
+		url('../fonts/Noto_Sans/NotoSans_Condensed-Medium.woff') format('woff');
 	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Inter';
-	src: url('../fonts/Inter/Inter_28pt-SemiBold.woff2') format('woff2'),
-		url('../fonts/Inter/Inter_28pt-SemiBold.woff') format('woff');
+	font-family: 'Noto Sans';
+	src: url('../fonts/Noto_Sans/NotoSans_Condensed-SemiBold.woff2')
+			format('woff2'),
+		url('../fonts/Noto_Sans/NotoSans_Condensed-SemiBold.woff')
+			format('woff');
 	font-weight: 600;
 	font-style: normal;
 }
+/* Noto_Sans_Display */
 @font-face {
-	font-family: 'Inter';
-	src: url('../fonts/Inter/Inter_28pt-ExtraBold.woff2') format('woff2'),
-		url('../fonts/Inter/Inter_28pt-ExtraBold.woff') format('woff');
-	font-weight: 800;
+	font-family: 'Noto Sans Display';
+	src: url('../fonts/Noto_Sans_Display/NotoSansDisplay_Condensed-Medium.woff2')
+			format('woff2'),
+		url('../fonts/Noto_Sans_Display/NotoSansDisplay_Condensed-Medium.woff2')
+			format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Noto Sans Display';
+	src: url('../fonts/Noto_Sans_Display/NotoSansDisplay_Condensed-SemiBold.woff2')
+			format('woff2'),
+		url('../fonts/Noto_Sans_Display/NotoSansDisplay_Condensed-SemiBold.woff')
+			format('woff');
+	font-weight: 600;
 	font-style: normal;
 }
 
 /* my reset */
 h1 {
-	font-family: 'Inter';
-	font-size: 28px;
+	font: var(--header-m);
 	font-style: normal;
-	font-weight: 600;
-	line-height: normal;
-	color: var(--text-primary);
-}
-h3 {
-	/* font: var(--header-m); */
-}
-h5 {
-	color: var(--text-primary);
-
-	font-family: 'Inter';
-	font-size: 1.5rem;
-	font-style: normal;
-	font-weight: 600;
-	line-height: normal;
+	color: var(--text-base);
 }
 a {
 	cursor: pointer;
 }
 p {
-	/* font: var(--text-s); */
+	font: var(--base-m);
+	font-style: normal;
+	color: var(--text-base);
 }
 img,
 svg {
@@ -153,10 +193,9 @@ svg {
 
 /* main css */
 body {
-	background: var(--base-background);
+	background: var(--background-base);
 
-	font-family: 'Inter', sans-serif;
-	font-weight: 400;
+	font: var(--base-m);
 }
 body,
 #root,
@@ -170,5 +209,5 @@ body,
 
 	max-width: 120rem;
 	margin: 0 auto;
-	background-color: var(--base-background);
+	background-color: var(--background-base);
 }
