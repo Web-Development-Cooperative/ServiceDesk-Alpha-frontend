@@ -1,0 +1,18 @@
+.wrapper-icon {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	aspect-ratio: 1/1;
+	padding: 0 7px;
+	border-radius: var(--size-border-radius-icon-base);
+
+	transition: background-color var(--time-to-do) var(--type-effect);
+}
+.primary:hover {
+	background-color: var(--background-icon-primary-hover);
+}
+.danger:hover {
+	background-color: var(--background-icon-danger-hover);
+}

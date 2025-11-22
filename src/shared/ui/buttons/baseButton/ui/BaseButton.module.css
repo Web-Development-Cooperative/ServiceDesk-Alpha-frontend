@@ -1,5 +1,70 @@
 .btn {
-	padding: 0.5rem 0.75rem;
-	border-radius: 1rem;
-	border: 1.5px solid burlywood;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	column-gap: 7px;
+
+	padding: 10px 16px;
+	border-radius: 7px;
+
+	font: var(--base-m);
+
+	transition: background-color var(--time-to-do) var(--type-effect),
+		border-color var(--time-to-do) var(--type-effect),
+		color var(--time-to-do) var(--type-effect);
+
+	& > svg > path {
+		transition: fill var(--time-to-do) var(--type-effect);
+	}
+}
+.without-text {
+	aspect-ratio: 1/1;
+	padding: 0 12px;
+}
+.base {
+	border: var(--size-border-width-base) solid var(--border-button-base);
+
+	background-color: var(--background-button-base);
+
+	color: var(--text-button-base);
+
+	&:hover {
+		border-color: var(--border-button-base-hover);
+		background-color: var(--background-button-base-hover);
+		color: var(--text-button-base-hover);
+
+		& > svg > path {
+			fill: var(--text-button-base-hover);
+		}
+	}
+	&:active {
+		border-color: var(--border-button-base-active);
+		background-color: var(--background-button-base-active);
+		color: var(--text-button-base-active);
+
+		& > svg > path {
+			fill: var(--text-button-base-active);
+		}
+	}
+
+	& > svg > path {
+		fill: var(--text-button-base);
+	}
+}
+.danger {
+	background-color: var(--background-button-danger);
+
+	color: var(--text-button-base-danger);
+
+	&:hover {
+		background-color: var(--background-button-danger-hover);
+	}
+	&:active {
+		background-color: var(--background-button-danger-active);
+	}
+
+	& > svg > path {
+		fill: var(--text-button-base-danger);
+	}
 }

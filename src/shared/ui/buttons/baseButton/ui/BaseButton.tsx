@@ -5,10 +5,24 @@ import type { FC } from 'react';
 import type { BaseButtonProps } from '../model/types';
 
 const BaseButton: FC<BaseButtonProps> = (props) => {
-	const { children, className, ...rest } = props;
+	const {
+		children,
+		className,
+		typeButton = 'danger',
+		withoutText = false,
+		...rest
+	} = props;
 	return (
-		<button {...rest} className={clsx(styles.btn, className)}>
-			{children ? children : 'Click me!'}
+		<button
+			{...rest}
+			className={clsx(
+				styles.btn,
+				styles[typeButton],
+				{ [styles['without-text']]: withoutText },
+				className
+			)}
+		>
+			{children}
 		</button>
 	);
 };

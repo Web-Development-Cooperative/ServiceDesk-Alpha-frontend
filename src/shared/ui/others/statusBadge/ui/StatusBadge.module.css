@@ -1,0 +1,27 @@
+.status-badge {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	padding: 6px 20px;
+	border-radius: var(--size-border-radius-icon-base);
+
+	font: var(--base-m);
+}
+.primary {
+	background-color: var(--background-status-badge-primary);
+	color: var(--text-status-badge-primary);
+}
+.inProgress {
+	background-color: var(--background-status-badge-progress);
+	color: var(--text-status-badge-progress);
+}
+.success {
+	background-color: var(--background-status-badge-success);
+	color: var(--text-status-badge-success);
+}
+.danger {
+	background-color: var(--background-status-badge-danger);
+	color: var(--text-status-badge-danger);
+}

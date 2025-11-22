@@ -1,0 +1,17 @@
+.badge {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	aspect-ratio: 1/1;
+	padding: 0 8px;
+	border-radius: 50%;
+	border: 2px solid var(--white);
+
+	background-color: var(--background-icon-badge);
+
+	font: var(--badge-m);
+	letter-spacing: 0;
+	color: var(--white);
+}

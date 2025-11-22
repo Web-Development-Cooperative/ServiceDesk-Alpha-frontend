@@ -1,0 +1,28 @@
+.notification {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	position: relative;
+	aspect-ratio: 1/1;
+	padding: 11px;
+	border-radius: 50%;
+
+	background-color: var(--background-icon-notification);
+
+	cursor: pointer;
+	transition: background-color var(--time-to-do) var(--type-effect);
+
+	&:hover {
+		background-color: var(--background-icon-notification-hover);
+	}
+	&:active {
+		background-color: var(--background-icon-notification-active);
+	}
+}
+.badge {
+	position: absolute;
+	top: -2px;
+	right: -2px;
+}

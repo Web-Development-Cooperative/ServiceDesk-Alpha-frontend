@@ -1,0 +1,24 @@
+.navigation-text {
+	font: var(--navigation-m);
+	color: var(--text-navigation);
+
+	transition: color var(--time-to-do) var(--type-effect);
+
+	&:hover {
+		color: var(--text-navigation-hover);
+	}
+}
+.active {
+	color: var(--text-navigation-active);
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: var(--deep-carmine-pink);
+	}
+}
