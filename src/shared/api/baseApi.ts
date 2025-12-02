@@ -1,12 +1,12 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 
-import { FILES_TAG, TOKEN_TAG } from '~~>shared/model/storeConsts';
+import { ALL_TAGS } from '~~>shared/model/storeConsts';
 
 import { baseQueryWithAuth } from './baseQueryWithAuth';
 import type { WithSlice } from '@reduxjs/toolkit';
 
 export const baseApi = createApi({
-	tagTypes: [TOKEN_TAG, FILES_TAG],
+	tagTypes: ALL_TAGS,
 	reducerPath: 'api',
 	keepUnusedDataFor: 300,
 	baseQuery: baseQueryWithAuth,
