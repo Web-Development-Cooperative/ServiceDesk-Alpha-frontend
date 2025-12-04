@@ -7,7 +7,7 @@ import styles from './Select.module.css';
 import type { SelectProps } from '../model/select.types';
 
 const Select = <T extends string | number = string>(props: SelectProps<T>) => {
-	const { options, value, onChange, disabled } = props;
+	const { options, value, onChange, disabled, className } = props;
 	const { handleSelect, toggleDropdown, containerRef, isOpen } =
 		useSelect(onChange);
 
@@ -27,7 +27,11 @@ const Select = <T extends string | number = string>(props: SelectProps<T>) => {
 
 	return (
 		<div
-			className={clsx(styles['search-select'], { [styles.open]: isOpen })}
+			className={clsx(
+				styles['search-select'],
+				{ [styles.open]: isOpen },
+				className
+			)}
 			ref={containerRef}
 			onMouseDown={toggleDropdown}
 		>

@@ -24,4 +24,8 @@
 	&::placeholder {
 		color: var(--text-placeholder);
 	}
+
+	& > input {
+		flex-grow: 1;
+	}
 }
