@@ -34,7 +34,7 @@
 	--brilliant-green: rgba(76, 175, 80, 1); /* #4CAF50 */
 
 	/* background */
-	--background-base: var(--white);
+	--background-base: var(--smoky-white);
 	--background-icon-notification: var(--smoky-white-light-darker);
 	--background-icon-notification-hover: var(--gainsborough);
 	--background-icon-notification-active: var(--forest-wolf);

@@ -6,4 +6,7 @@
 
 	width: 100%;
 	padding: 8px 54px 8px 35px;
+	border-bottom: 1px solid var(--border-base);
+
+	background-color: var(--white);
 }

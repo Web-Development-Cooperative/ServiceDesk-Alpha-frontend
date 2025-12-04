@@ -50,9 +50,11 @@
 }
 .user-name {
 	font: var(--avatar-m);
+	line-height: 1.35;
 	color: var(--text-base);
 }
 .role {
 	font: var(--base-s);
+	line-height: 1.35;
 	color: var(--text-description);
 }
