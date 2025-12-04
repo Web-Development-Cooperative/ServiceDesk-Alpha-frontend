@@ -1,4 +1,5 @@
 import { BranchesControls } from '~~>widgets/BranchesControls';
+import { DisplayBranches } from '~~>features/displayBranches';
 
 import styles from './BranchesPage.module.css';
 
@@ -7,7 +8,7 @@ const BranchesPage = () => {
 		<div className={styles.page}>
 			<h1>Филиалы</h1>
 			<BranchesControls />
-			<div className="branches-list"></div>
+			<DisplayBranches />
 		</div>
 	);
 };

@@ -1,0 +1,28 @@
+.branch-name {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 10px;
+}
+.area {
+	width: 37%;
+}
+.col-value {
+	text-align: start;
+	cursor: pointer;
+}
+.col-value__area {
+	font: var(--bold-column-xl);
+	color: var(--text-base);
+	vertical-align: text-top;
+}
+.col-value__name p {
+	&:first-of-type {
+		font: var(--base-m);
+		color: var(--text-base);
+	}
+	&:last-of-type {
+		font: var(--search-s);
+		color: var(--text-description);
+	}
+}

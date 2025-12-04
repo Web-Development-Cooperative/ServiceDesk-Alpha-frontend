@@ -9,3 +9,4 @@ export { NavigationText } from './navigationText/NavigationText';
 export { UserCard } from './userCard/ui/UserCard';
 export { SearchBar } from './searchBar/ui/SearchBar';
 export { NavBar } from './navBar/ui/NavBar';
+export { UniTable } from './uniTable/ui/UniTable';
