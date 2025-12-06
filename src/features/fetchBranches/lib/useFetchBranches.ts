@@ -1,3 +1,0 @@
-const useFetchBranches = () => {};
-
-export { useFetchBranches };

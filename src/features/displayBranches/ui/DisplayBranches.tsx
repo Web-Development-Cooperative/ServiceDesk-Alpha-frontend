@@ -2,7 +2,7 @@ import { clsx } from 'clsx';
 
 import { UniTable } from '~~>shared/ui/others';
 
-import { useDisplayBranches } from '../lib/iuseDisplayBranches';
+import { useDisplayBranches } from '../lib/useDisplayBranches';
 import styles from './DisplayBranches.module.css';
 
 const DisplayBranches = () => {
