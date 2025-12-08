@@ -30,10 +30,7 @@ const useBranchesPagination = () => {
 	};
 
 	useEffect(() => {
-		trigger(
-			{ size: '1', sort: sort?.split('&'), page: String(+page - 1) },
-			true
-		);
+		trigger({ sort: sort?.split('&'), page: String(+page - 1) }, true);
 	}, [sort, page]);
 
 	return { data, page, onPageChange, onPageInc, onPageDec };
