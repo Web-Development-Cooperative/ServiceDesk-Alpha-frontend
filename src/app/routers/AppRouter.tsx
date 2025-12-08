@@ -44,6 +44,22 @@ const router = createBrowserRouter([
 				),
 			},
 			{
+				path: ROUTES.BRANCH,
+				element: (
+					<Suspense fallback={<div>Загрузка компонента...</div>}>
+						<>Скоро</>
+					</Suspense>
+				),
+			},
+			{
+				path: ROUTES.ADD_BRANCH,
+				element: (
+					<Suspense fallback={<div>Загрузка компонента...</div>}>
+						<>Скоро</>
+					</Suspense>
+				),
+			},
+			{
 				path: ROUTES.APPLICATIONS,
 				element: (
 					<Suspense fallback={<div>Загрузка компонента...</div>}>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { clsx } from 'clsx';
 
 import { UniTable } from '~~>shared/ui/others';
@@ -22,15 +23,17 @@ const BranchesDisplay = () => {
 			<td
 				className={clsx(styles['col-value'], styles['col-value__area'])}
 			>
-				{item.area}
+				<Link to={item.id} className={styles['link__area']}>
+					{item.area}
+				</Link>
 			</td>
 			<td
 				className={clsx(styles['col-value'], styles['col-value__name'])}
 			>
-				<div className={styles['branch-name']}>
+				<Link to={item.id} className={styles['branch-name']}>
 					<p>{item.name}</p>
 					<p>{item.address}</p>
-				</div>
+				</Link>
 			</td>
 		</>
 	);

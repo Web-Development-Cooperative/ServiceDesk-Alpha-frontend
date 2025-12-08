@@ -13,7 +13,7 @@ const BranchesControls = () => {
 		<div className={styles.controls}>
 			<BranchesSearch />
 			<BranchesSort />
-			<Link to={ROUTES.BRANCHES}>
+			<Link to={ROUTES.ADD_BRANCH}>
 				<BaseButton>
 					<Plus /> Добавить филиал
 				</BaseButton>

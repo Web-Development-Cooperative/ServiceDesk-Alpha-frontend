@@ -2,6 +2,8 @@ const ROUTES = {
 	LOGIN: '/login',
 	HOME: '/',
 	BRANCHES: '/branches',
+	ADD_BRANCH: '/branches/add-branch',
+	BRANCH: '/branches/:branch-id',
 	APPLICATIONS: '/applications',
 } as const;
 
@@ -9,6 +11,8 @@ const ADAPTER_ROUTES_BREADCRUMBS = {
 	'/': 'Главная',
 	'/login': 'Вход',
 	'/branches': 'Филиалы',
+	'/branches/add-branch': 'Добавить филиал',
+	'/branches/:branch-id': 'Филиал:',
 	'/applications': 'Мои заявки',
 } as const;
 
