@@ -14,4 +14,4 @@ type SelectProps<T extends string | number = string> = Omit<
 		onChange: (value: Option<T>) => void;
 	};
 
-export type { SelectProps };
+export type { SelectProps, Option };

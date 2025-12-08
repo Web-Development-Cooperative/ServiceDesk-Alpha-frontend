@@ -18,6 +18,7 @@
 }
 .avatar {
 	max-width: 40px;
+	min-width: 40px;
 	aspect-ratio: 1/1;
 	border-radius: 50%;
 
@@ -49,9 +50,11 @@
 }
 .user-name {
 	font: var(--avatar-m);
+	line-height: 1.35;
 	color: var(--text-base);
 }
 .role {
 	font: var(--base-s);
+	line-height: 1.35;
 	color: var(--text-description);
 }

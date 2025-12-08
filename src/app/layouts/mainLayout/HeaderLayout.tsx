@@ -1,14 +1,16 @@
 import { Outlet } from 'react-router';
 
-import { MainNavigation } from '~~>widgets/mainNavigation';
-import { Breadcrumbs } from '~~>features/breadcrumbs';
+import { Header } from '~~>widgets/header';
+
+import styles from './HeaderLayout.module.css';
 
 const HeaderLayout = () => {
 	return (
 		<>
-			<Breadcrumbs />
-			<MainNavigation />
-			<Outlet />
+			<Header />
+			<div className={styles['pages-wrapper']}>
+				<Outlet />
+			</div>
 		</>
 	);
 };

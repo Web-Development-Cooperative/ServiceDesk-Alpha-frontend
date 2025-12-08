@@ -16,4 +16,9 @@ type BranchesResponseBody = BaseResponseBody<BranchResponseBody>;
 type BranchModel = BranchResponseBody;
 type BranchesModel = BranchModel;
 
-export type { BranchesRequestParams, BranchesResponseBody, BranchesModel };
+export type {
+	BranchesRequestParams,
+	BranchesResponseBody,
+	BranchesModel,
+	BranchResponseBody,
+};

@@ -1,0 +1,22 @@
+import { PaginationBar } from '~~>shared/ui/others';
+
+import { useBranchesPagination } from '../lib/useBranchesPagination';
+
+const BranchesPagination = () => {
+	const { data, page, onPageChange, onPageInc, onPageDec } =
+		useBranchesPagination();
+
+	return (
+		<PaginationBar
+			maxPage={data?.totalPages || 1}
+			totalElements={data?.totalElements || 0}
+			cardinality={(data?.content.length || 0) * +page}
+			currentPage={+page}
+			onPageChange={onPageChange}
+			onPageInc={onPageInc}
+			onPageDec={onPageDec}
+		/>
+	);
+};
+
+export { BranchesPagination };

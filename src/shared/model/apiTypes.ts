@@ -8,8 +8,8 @@ type Pageable = {
 };
 
 type BaseParameters = {
-	page?: number;
-	size?: number;
+	page?: string;
+	size?: string;
 	sort?: Array<string>;
 };
 

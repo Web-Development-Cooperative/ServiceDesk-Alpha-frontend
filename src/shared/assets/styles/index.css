@@ -34,7 +34,7 @@
 	--brilliant-green: rgba(76, 175, 80, 1); /* #4CAF50 */
 
 	/* background */
-	--background-base: var(--white);
+	--background-base: var(--smoky-white);
 	--background-icon-notification: var(--smoky-white-light-darker);
 	--background-icon-notification-hover: var(--gainsborough);
 	--background-icon-notification-active: var(--forest-wolf);
@@ -51,7 +51,9 @@
 	--background-button-danger-hover: var(--transport-red);
 	--background-button-danger-active: var(--red-burgundy);
 	--background-input: var(--white);
-	--background-table-row: var(--white);
+	--background-table-header: var(--dull-grey);
+	--background-table-row-f: var(--white);
+	--background-table-row-s: var(--smoky-white-darker);
 	--background-table-row-hover: var(--gainsborough-darker);
 	--background-table-row-active: var(--light-grey);
 	--background-status-badge-primary: var(--blue-alice);
@@ -94,7 +96,9 @@
 	/* sizes */
 	--size-border-width-base: 1px;
 	--size-border-radius-base: 7px;
+	--size-border-radius-table: 12px;
 	--size-border-radius-icon-base: 7px;
+	--size-row-gap-on-page: 30px;
 
 	/* fonts */
 	--fs-base-s: clamp(0.5rem, 0.409rem + 0.45vw, 0.75rem);
@@ -104,8 +108,8 @@
 	--fs-base-l: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
 	--base-l: 600 var(--fs-base-l) / 1 'Noto Sans';
 
-	--fs-search-s: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
-	--search-s: 400 var(--fs-search-m) / 1 'Noto Sans';
+	--fs-search-s: clamp(0.625rem, 0.489rem + 0.68vw, 1rem);
+	--search-s: 400 var(--fs-search-s) / 1 'Noto Sans';
 	--fs-avatar-m: clamp(0.625rem, 0.534rem + 0.45vw, 0.875rem);
 	--avatar-m: 500 var(--fs-avatar-m) / 1 'Noto Sans';
 	--fs-note-m: clamp(0.625rem, 0.443rem + 0.91vw, 1.125rem);
@@ -120,9 +124,11 @@
 	--button-l: 600 var(--fs-button-l) / 1 'Noto Sans';
 	--fs-paggination-l: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);
 	--paggination-l: 600 var(--fs-paggination-l) / 1 'Noto Sans';
+	--fs-bold-column-xl: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
+	--bold-column-xl: 700 var(--fs-bold-column-xl) / 1 'Noto Sans';
 
 	--fs-header-m: clamp(1.25rem, 1.068rem + 0.91vw, 1.75rem);
-	--header-m: 500 var(--fs-header-xl) / 1.175 'Noto Sans';
+	--header-m: 500 var(--fs-header-m) / 1.175 'Noto Sans';
 
 	/* effects */
 	--time-to-do: 0.3s;
@@ -165,6 +171,13 @@
 		url('../fonts/Noto_Sans/NotoSans_Condensed-SemiBold.woff')
 			format('woff');
 	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Noto Sans';
+	src: url('../fonts/Noto_Sans/NotoSans-Bold.woff2') format('woff2'),
+		url('../fonts/Noto_Sans/NotoSans-Bold.woff') format('woff');
+	font-weight: 700;
 	font-style: normal;
 }
 /* Noto_Sans_Display */
@@ -223,9 +236,9 @@ body,
 .App {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: stretch;
 
-	max-width: 120rem;
+	max-width: 90rem;
 	margin: 0 auto;
 	background-color: var(--background-base);
 }
