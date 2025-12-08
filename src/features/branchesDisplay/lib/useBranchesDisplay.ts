@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router';
 
 import { useLazyGetBranchesQuery } from '~~>entities/branches';
 
-const useDisplayBranches = () => {
+const useBranchesDisplay = () => {
 	const [searchParams] = useSearchParams();
 	// TODO...
 	// const search = searchParams.get('search') ?? '';
@@ -13,10 +13,15 @@ const useDisplayBranches = () => {
 	const [trigger, { data }] = useLazyGetBranchesQuery();
 
 	useEffect(() => {
-		trigger({ sort: sort?.split(';'), page: String(+page - 1) }, true);
+		trigger(
+			{ size: '1', sort: sort?.split(';'), page: String(+page - 1) },
+			true
+		);
 	}, [sort, page]);
 
-	return { data };
+	return {
+		data: data?.content,
+	};
 };
 
-export { useDisplayBranches };
+export { useBranchesDisplay };

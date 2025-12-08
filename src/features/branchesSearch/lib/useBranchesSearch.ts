@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router';
 
 import { useDebounce } from '~~>shared/lib/useDebounce';
 
-const useBranchSearch = () => {
+const useBranchesSearch = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const search = searchParams.get('search') ?? '';
 
@@ -27,4 +27,4 @@ const useBranchSearch = () => {
 	return { value, updateValue };
 };
 
-export { useBranchSearch };
+export { useBranchesSearch };

@@ -2,11 +2,11 @@ import { clsx } from 'clsx';
 
 import { UniTable } from '~~>shared/ui/others';
 
-import { useDisplayBranches } from '../lib/useDisplayBranches';
-import styles from './DisplayBranches.module.css';
+import { useBranchesDisplay } from '../lib/useBranchesDisplay';
+import styles from './BranchesDisplay.module.css';
 
-const DisplayBranches = () => {
-	const { data } = useDisplayBranches();
+const BranchesDisplay = () => {
+	const { data } = useBranchesDisplay();
 
 	const renderHead = () => (
 		<>
@@ -15,7 +15,7 @@ const DisplayBranches = () => {
 		</>
 	);
 	const renderBody = (
-		item: NonNullable<typeof data>['content'][number],
+		item: NonNullable<typeof data>[number],
 		_index: number
 	) => (
 		<>
@@ -37,11 +37,11 @@ const DisplayBranches = () => {
 
 	return (
 		<UniTable
-			data={data?.content || []}
+			data={data || []}
 			renderHead={renderHead}
 			renderBody={renderBody}
 		/>
 	);
 };
 
-export { DisplayBranches };
+export { BranchesDisplay };

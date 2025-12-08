@@ -1,11 +1,11 @@
 import { Select } from '~~>shared/ui/inputs';
 
-import { SORT_ARRAY } from '../model/branchesControls.consts';
-import { useBranchSort } from '../lib/useBranchSort';
-import styles from './BranchSort.module.css';
+import { SORT_ARRAY } from '../model/branchesSort.consts';
+import { useBranchesSort } from '../lib/useBranchesSort';
+import styles from './BranchesSort.module.css';
 
-const BranchSort = () => {
-	const { sort, onChangeSort } = useBranchSort();
+const BranchesSort = () => {
+	const { sort, onChangeSort } = useBranchesSort();
 
 	return (
 		<div className={styles['sort-wrapper']}>
@@ -20,4 +20,4 @@ const BranchSort = () => {
 	);
 };
 
-export { BranchSort };
+export { BranchesSort };

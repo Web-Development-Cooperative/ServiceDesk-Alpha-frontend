@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 
-import { SORT_ARRAY } from '../model/branchesControls.consts';
+import { SORT_ARRAY } from '../model/branchesSort.consts';
 import type { Option } from '~~>shared/ui/inputs';
 
-const useBranchSort = () => {
+const useBranchesSort = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const sort = searchParams.get('sort') ?? undefined;
 
@@ -27,4 +27,4 @@ const useBranchSort = () => {
 	return { sort, onChangeSort };
 };
 
-export { useBranchSort };
+export { useBranchesSort };
