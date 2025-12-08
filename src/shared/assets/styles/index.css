@@ -14,17 +14,21 @@
 	--gainsborough-darker: rgba(228, 228, 228, 1); /* #E4E4E4 */
 	--gainsborough: rgba(231, 230, 230, 1); /* #E7E6E6 */
 	--periwinkle-crayola: rgba(232, 235, 240, 1); /* #E8EBF0 */
+	--almond-crayola: rgba(242, 227, 211, 1); /* #F2E3D3 */
 	--pearl-white: rgba(232, 245, 233, 1); /* #E8F5E9 */
 	--smoky-white-darker: rgba(241, 241, 241, 1); /* #F1F1F1 */
 	--smoky-white-light-darker: rgba(245, 245, 245, 1); /* #F5F5F5 */
 	--smoky-white: rgba(247, 247, 247, 1); /* #F7F7F7 */
 	--white: rgba(255, 255, 255, 1); /* #FFFFFF */
+	--brown: rgba(158, 81, 0, 1); /* #9E5100 */
 	--red-burgundy: rgba(179, 0, 0, 1); /* #B30000 */
 	--transport-red: rgba(207, 0, 0, 1); /* #CF0000 */
 	--red: rgba(255, 0, 0, 1); /* #FF0000 */
 	--deep-carmine-pink: rgba(239, 49, 36, 1); /* #EF3124 */
 	--pink-lavender: rgba(255, 235, 238, 1); /* #FFEBEE */
 	--blue-alice: rgba(227, 242, 253, 1); /* #E3F2FD */
+	--light-purple: rgba(243, 229, 245, 1); /* #F3E5F5 */
+	--dark-orchid: rgba(126, 32, 162, 1); /* #7E20A2 */
 	--denim-blue: rgba(21, 108, 198, 1); /* #156CC6 */
 	--twitter-color: rgba(33, 150, 243, 1); /* #2196F3 */
 	--cosmic-cream: rgba(255, 244, 230, 1); /* #FFF4E6 */
@@ -51,6 +55,7 @@
 	--background-button-danger-hover: var(--transport-red);
 	--background-button-danger-active: var(--red-burgundy);
 	--background-input: var(--white);
+	--background-info-section-header: var(--periwinkle-crayola);
 	--background-table-header: var(--dull-grey);
 	--background-table-row-f: var(--white);
 	--background-table-row-s: var(--smoky-white-darker);
@@ -60,6 +65,8 @@
 	--background-status-badge-progress: var(--cosmic-cream);
 	--background-status-badge-success: var(--pearl-white);
 	--background-status-badge-danger: var(--pink-lavender);
+	--background-badge-purple: var(--light-purple);
+	--background-badge-crayola: var(--almond-crayola);
 
 	/* border */
 	--border-base: var(--periwinkle-crayola);
@@ -89,6 +96,8 @@
 	--text-status-badge-progress: var(--bright-orange);
 	--text-status-badge-success: var(--transport-green);
 	--text-status-badge-danger: var(--red);
+	--text-badge-purple: var(--dark-orchid);
+	--text-badge-crayola: var(--brown);
 
 	/* shadow  */
 	--shadow-statistic-card: 0px 1px 0px 0px var(--black-25a) inset;
@@ -97,6 +106,7 @@
 	--size-border-width-base: 1px;
 	--size-border-radius-base: 7px;
 	--size-border-radius-table: 12px;
+	--size-border-radius-info-section: 18px;
 	--size-border-radius-icon-base: 7px;
 	--size-row-gap-on-page: 30px;
 
@@ -129,6 +139,8 @@
 
 	--fs-header-m: clamp(1.25rem, 1.068rem + 0.91vw, 1.75rem);
 	--header-m: 500 var(--fs-header-m) / 1.175 'Noto Sans';
+	--fs-header-l: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);
+	--header-l: 600 var(--fs-header-l) / 1.175 'Noto Sans';
 
 	/* effects */
 	--time-to-do: 0.3s;
@@ -203,6 +215,11 @@
 /* my reset */
 h1 {
 	font: var(--header-m);
+	font-style: normal;
+	color: var(--text-base);
+}
+h3 {
+	font: var(--header-l);
 	font-style: normal;
 	color: var(--text-base);
 }

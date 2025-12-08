@@ -1,24 +1,17 @@
-import { clsx } from 'clsx';
+import { BrightBackground } from '~~>shared/ui/others';
 
 import { STATUS_APPLICATION } from '../model/consts';
-import styles from './StatusBadge.module.css';
 import type { FC } from 'react';
 import type { StatusBadgeProps } from '../model/statusBadge.types';
 
 const StatusBadge: FC<StatusBadgeProps> = ({
-	className,
+	className = '',
 	typeBadge = 'primary',
 }) => {
 	return (
-		<span
-			className={clsx(
-				styles['status-badge'],
-				styles[typeBadge],
-				className
-			)}
-		>
+		<BrightBackground className={className} typeBG={typeBadge}>
 			{STATUS_APPLICATION[typeBadge]}
-		</span>
+		</BrightBackground>
 	);
 };
 
