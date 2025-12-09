@@ -1,0 +1,11 @@
+.branch-users {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+
+	border-top-left-radius: var(--size-border-radius-table);
+	border-top-right-radius: var(--size-border-radius-table);
+	border: 2px solid var(--border-base);
+	border-bottom: unset;
+}

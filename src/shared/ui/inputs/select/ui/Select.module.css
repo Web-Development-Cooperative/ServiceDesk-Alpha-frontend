@@ -54,7 +54,7 @@
 	background-color: var(--background-input);
 	overflow-y: auto;
 
-	z-index: 1000;
+	z-index: 200;
 }
 .option {
 	padding: 8px 12px;

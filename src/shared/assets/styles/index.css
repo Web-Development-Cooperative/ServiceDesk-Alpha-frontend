@@ -139,6 +139,8 @@
 
 	--fs-header-m: clamp(1.25rem, 1.068rem + 0.91vw, 1.75rem);
 	--header-m: 500 var(--fs-header-m) / 1.175 'Noto Sans';
+	--fs-header-l-s: clamp(0.75rem, 0.614rem + 0.68vw, 1.125rem);
+	--header-l-s: 600 var(--fs-header-l-s) / 1.175 'Noto Sans';
 	--fs-header-l: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);
 	--header-l: 600 var(--fs-header-l) / 1.175 'Noto Sans';
 
@@ -220,6 +222,11 @@ h1 {
 }
 h3 {
 	font: var(--header-l);
+	font-style: normal;
+	color: var(--text-base);
+}
+h4 {
+	font: var(--header-l-s);
 	font-style: normal;
 	color: var(--text-base);
 }

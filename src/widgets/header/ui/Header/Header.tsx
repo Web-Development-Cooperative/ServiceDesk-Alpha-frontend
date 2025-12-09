@@ -6,7 +6,7 @@ import styles from './Header.module.css';
 import type { FC } from 'react';
 
 const Header: FC = () => {
-	// TODO...
+	// TODO, добавить пользователя?
 	return (
 		<div className={styles.header}>
 			<FetchUserProfile />

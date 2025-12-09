@@ -1,6 +1,9 @@
 import { TableWithPagination } from '~~>widgets/tableWithPagination';
 import { BranchControls } from '~~>widgets/branchControls';
+import { BranchUsersControls } from '~~>widgets/branchUsersControls';
 import { BranchDisplay } from '~~>features/branchDisplay';
+import { BranchUsersDisplay } from '~~>features/branchUsersDisplay';
+import { BranchUsersPagination } from '~~>features/branchUsersPagination';
 import { InfoSection } from '~~>shared/ui/others';
 
 import styles from './BranchPage.module.css';
@@ -12,12 +15,15 @@ const BranchPage = () => {
 			<InfoSection title="Информация о филиале">
 				<BranchDisplay />
 			</InfoSection>
-			<div className="branch-users">
+			<InfoSection
+				title="Пользователи"
+				controls={<BranchUsersControls />}
+			>
 				<TableWithPagination>
-					<div className="table"></div>
-					<div className="pagination"></div>
+					<BranchUsersDisplay />
+					<BranchUsersPagination />
 				</TableWithPagination>
-			</div>
+			</InfoSection>
 		</div>
 	);
 };

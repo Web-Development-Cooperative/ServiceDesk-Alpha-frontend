@@ -1,0 +1,15 @@
+.sort-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	column-gap: 20px;
+
+	& > p {
+		font: var(--base-m);
+		color: var(--text-description);
+	}
+}
+.select {
+	min-width: 320px;
+}
