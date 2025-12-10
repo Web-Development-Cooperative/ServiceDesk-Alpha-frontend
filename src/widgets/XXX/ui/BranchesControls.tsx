@@ -4,8 +4,8 @@ import { BaseButton } from '~~>shared/ui/buttons';
 import { BranchPopup } from '~~>shared/ui/others';
 import { Plus } from '~~>shared/ui/icons';
 
-import { useTEMP } from '../lib/TEMP';
-import styles from './TEMP.module.css';
+import { useBranchesControls } from '../lib/useBranchesControls';
+import styles from './BranchesControls.module.css';
 
 const BranchesControls = () => {
 	const {
@@ -18,7 +18,7 @@ const BranchesControls = () => {
 		onChangeSelectField,
 		openPopup,
 		closePopup,
-	} = useTEMP();
+	} = useBranchesControls();
 
 	return (
 		<div className={styles.controls}>

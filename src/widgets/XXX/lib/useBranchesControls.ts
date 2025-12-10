@@ -4,7 +4,7 @@ import type { ChangeEvent } from 'react';
 import type { BranchRequestModel } from '~~>entities/branch';
 import type { Option } from '~~>shared/ui/inputs';
 
-const useTEMP = () => {
+const useBranchesControls = () => {
 	const [popupState, setPopupState] = useState(false);
 	const [data, setData] = useState<BranchRequestModel>({
 		parent: { id: '-1', name: '' },
@@ -53,4 +53,4 @@ const useTEMP = () => {
 	};
 };
 
-export { useTEMP };
+export { useBranchesControls };
