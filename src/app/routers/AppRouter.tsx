@@ -9,6 +9,7 @@ const HeaderLayout = lazy(() => import('~~>app/layouts/mainLayout'));
 const LoginPage = lazy(() => import('~~>pages/login'));
 const ApplicationsPage = lazy(() => import('~~>pages/applications'));
 const BranchesPage = lazy(() => import('~~>pages/branches'));
+const BranchPage = lazy(() => import('~~>pages/branch'));
 
 const router = createBrowserRouter([
 	{
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
 				path: ROUTES.BRANCH,
 				element: (
 					<Suspense fallback={<div>Загрузка компонента...</div>}>
-						<>Скоро</>
+						<BranchPage />
 					</Suspense>
 				),
 			},

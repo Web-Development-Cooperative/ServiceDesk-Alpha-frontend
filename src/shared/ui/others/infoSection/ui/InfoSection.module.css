@@ -1,0 +1,32 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	align-self: stretch;
+	justify-content: flex-start;
+
+	border-radius: var(--size-border-radius-info-section);
+	border: 1px solid var(--border-base);
+
+	overflow: hidden;
+}
+.header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	column-gap: 30px;
+
+	padding: 16px 40px;
+	background-color: var(--background-info-section-header);
+}
+.body {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+
+	padding: 30px 40px;
+
+	background-color: var(--white);
+}

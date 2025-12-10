@@ -12,4 +12,6 @@
 	border-bottom: 1px solid var(--border-base);
 
 	background-color: var(--white);
+
+	z-index: 1000;
 }

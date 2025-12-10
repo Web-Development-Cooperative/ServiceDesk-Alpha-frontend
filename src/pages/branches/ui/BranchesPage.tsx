@@ -1,4 +1,4 @@
-import { BranchesControls } from '~~>widgets/BranchesControls';
+import { BranchesControls } from '~~>widgets/branchesControls';
 import { TableWithPagination } from '~~>widgets/tableWithPagination';
 import { BranchesDisplay } from '~~>features/branchesDisplay';
 import { BranchesPagination } from '~~>features/branchesPagination';

@@ -25,3 +25,11 @@
 	background-color: var(--background-status-badge-danger);
 	color: var(--text-status-badge-danger);
 }
+.purple {
+	background-color: var(--background-badge-purple);
+	color: var(--text-badge-purple);
+}
+.crayola {
+	background-color: var(--background-badge-crayola);
+	color: var(--text-badge-crayola);
+}

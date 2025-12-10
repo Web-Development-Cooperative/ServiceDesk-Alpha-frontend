@@ -5,3 +5,6 @@ export { SelectArrow } from './selectArrow/SelectArrow';
 export { PencilEdit } from './pencilEdit/PencilEdit';
 export { Trashcan } from './trashcan/Trashcan';
 export { Arrow } from './arrow/Arrow';
+export { Phone } from './phone/Phone';
+export { Email } from './email/Email';
+export { Place } from './place/Place';
