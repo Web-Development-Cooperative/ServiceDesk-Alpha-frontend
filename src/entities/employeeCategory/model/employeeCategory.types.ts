@@ -1,4 +1,4 @@
-import type { BaseObject } from '~~>shared/model/baseEntity.types';
+import type { BaseObject, Category } from '~~>shared/model/baseEntity.types';
 
 type EmployeeCategoryRequestUrl = {
 	branchId: string;
@@ -17,7 +17,7 @@ type EmployeeCategoryRequestDeleteUrl = EmployeeCategoryRequestUrl & {
 
 type EmployeeCategoryResponseBody = {
 	id: string;
-	category: string;
+	category: Category;
 };
 
 type EmployeeCategoryModel = BaseObject;

@@ -3,7 +3,15 @@ import type {
 	BaseResponseBody,
 } from '~~>shared/model/apiTypes';
 
-type BranchesRequestParams = BaseParameters;
+type BranchesRequestParams = BaseParameters & {
+	name?: string;
+	area?: string;
+	address?: string;
+};
+type BranchesRequestPayload = {
+	url: string;
+	params: BranchesRequestParams;
+};
 
 type BranchResponseBody = {
 	id: string;
@@ -14,10 +22,11 @@ type BranchResponseBody = {
 type BranchesResponseBody = BaseResponseBody<BranchResponseBody>;
 
 type BranchModel = BranchResponseBody;
-type BranchesModel = BranchModel;
+type BranchesModel = Array<BranchModel>;
 
 export type {
 	BranchesRequestParams,
+	BranchesRequestPayload,
 	BranchesResponseBody,
 	BranchesModel,
 	BranchResponseBody,

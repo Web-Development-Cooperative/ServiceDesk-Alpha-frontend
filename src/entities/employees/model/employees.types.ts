@@ -2,44 +2,46 @@ import type {
 	BaseParameters,
 	BaseResponseBody,
 } from '~~>shared/model/apiTypes';
-import type { BaseObject, Role } from '~~>shared/model/baseEntity.types';
+import type { Category, Role } from '~~>shared/model/baseEntity.types';
 
 type EmployeesRequestUrl = string;
+type EmployeesRequestParams = BaseParameters & {
+	firstName?: string;
+	lastName?: string;
+	patronymic?: string;
+	email?: string;
+	phone?: string;
+	workplace?: string;
+};
 type EmployeesRequestPayload = {
 	url: EmployeesRequestUrl;
-	params: BaseParameters;
+	params: EmployeesRequestParams;
 };
 
+type EmployeeCategory = {
+	id: string;
+	category: Category;
+};
 type EmployeeResponseBody = {
 	id: string;
 	branchId: string;
 	user: {
 		id: string;
 		email: string;
-		first_name: string;
-		last_name: string;
+		firstName: string;
+		lastName: string;
 		patronymic: string;
+		phone: string;
 		workplace: string;
 		branch: string;
 		enabled: boolean;
 		roles: Array<Role>;
 	};
-	categories: [
-		{
-			id: string;
-			category: string;
-		}
-	];
+	categories: Array<EmployeeCategory>;
 };
 type EmployeesResponseBody = BaseResponseBody<EmployeeResponseBody>;
 
-type EmployeeModel = Omit<EmployeeResponseBody, 'user' | 'categories'> & {
-	user: Omit<EmployeeResponseBody['user'], 'first_name' | 'last_name'> & {
-		firstname: string;
-		lastname: string;
-	};
-	categories: Array<BaseObject>;
-};
+type EmployeeModel = EmployeeResponseBody;
 type EmployeesModel = Array<EmployeeModel>;
 
 export type {
