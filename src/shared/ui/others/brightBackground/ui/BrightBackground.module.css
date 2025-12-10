@@ -10,26 +10,43 @@
 	font: var(--base-m);
 }
 .primary {
+	--background-origin: var(--background-status-badge-primary);
 	background-color: var(--background-status-badge-primary);
 	color: var(--text-status-badge-primary);
 }
 .inProgress {
+	--background-origin: var(--background-status-badge-progress);
 	background-color: var(--background-status-badge-progress);
 	color: var(--text-status-badge-progress);
 }
 .success {
+	--background-origin: var(--background-status-badge-success);
 	background-color: var(--background-status-badge-success);
 	color: var(--text-status-badge-success);
 }
 .danger {
+	--background-origin: var(--background-status-badge-danger);
 	background-color: var(--background-status-badge-danger);
 	color: var(--text-status-badge-danger);
 }
 .purple {
+	--background-origin: var(--background-badge-purple);
 	background-color: var(--background-badge-purple);
 	color: var(--text-badge-purple);
 }
 .crayola {
+	--background-origin: var(--background-badge-crayola);
 	background-color: var(--background-badge-crayola);
 	color: var(--text-badge-crayola);
+}
+.isAction {
+	padding: 7px;
+
+	background-color: transparent;
+
+	transition: background-color var(--time-to-do) var(--type-effect);
+
+	&:hover {
+		background-color: var(--background-origin);
+	}
 }

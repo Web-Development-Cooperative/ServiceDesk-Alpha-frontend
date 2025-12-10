@@ -1,7 +1,8 @@
 import { Link } from 'react-router';
 import { clsx } from 'clsx';
 
-import { UniTable } from '~~>shared/ui/others';
+import { BrightBackground, UniTable } from '~~>shared/ui/others';
+import { PencilEdit, Trashcan } from '~~>shared/ui/icons';
 
 import { useBranchesDisplay } from '../lib/useBranchesDisplay';
 import styles from './BranchesDisplay.module.css';
@@ -13,6 +14,7 @@ const BranchesDisplay = () => {
 		<>
 			<th className={styles.area}>Регион/область</th>
 			<th>Филиалы</th>
+			<th className={styles.actions}>Действия</th>
 		</>
 	);
 	const renderBody = (
@@ -34,6 +36,16 @@ const BranchesDisplay = () => {
 					<p>{item.name}</p>
 					<p>{item.address}</p>
 				</Link>
+			</td>
+			<td className={clsx(styles['col-value'])}>
+				<div className={styles['col-actions']}>
+					<BrightBackground isAction>
+						<PencilEdit />
+					</BrightBackground>
+					<BrightBackground typeBG="danger" isAction>
+						<Trashcan />
+					</BrightBackground>
+				</div>
 			</td>
 		</>
 	);

@@ -13,6 +13,9 @@
 .area {
 	width: 37%;
 }
+.actions {
+	width: 15%;
+}
 .col-value {
 	padding: 0 !important;
 	text-align: start;
@@ -40,4 +43,13 @@
 		font: var(--search-s);
 		color: var(--text-description);
 	}
+}
+.col-actions {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	column-gap: 10px;
+
+	padding: 22px 33px;
 }

@@ -7,11 +7,17 @@ import type { BrightBackgroundProps } from '../model/statusBadge.types';
 const BrightBackground: FC<PropsWithChildren<BrightBackgroundProps>> = ({
 	children,
 	className,
+	isAction = false,
 	typeBG = 'primary',
 }) => {
 	return (
 		<span
-			className={clsx(styles['status-badge'], styles[typeBG], className)}
+			className={clsx(
+				styles['status-badge'],
+				styles[typeBG],
+				{ [styles.isAction]: isAction },
+				className
+			)}
 		>
 			{children}
 		</span>
