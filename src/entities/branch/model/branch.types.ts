@@ -43,6 +43,10 @@ type BranchResponseBody = {
 	address: string;
 };
 
+type BranchRequestModel = Omit<
+	BranchRequestBody,
+	'parentId' | 'codeId' | 'typeId'
+> & { parent: BaseObject; code: BaseObject; type: BaseObject };
 type BrancModel = Omit<BranchResponseBody, 'parent' | 'code'> & {
 	parent: Omit<BranchResponseBody['parent'], 'code'> & {
 		code: BaseObject;
@@ -55,5 +59,6 @@ export type {
 	BranchRequestBody,
 	BranchRequestPutPayload,
 	BranchResponseBody,
+	BranchRequestModel,
 	BrancModel,
 };

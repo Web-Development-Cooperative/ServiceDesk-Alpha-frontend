@@ -13,3 +13,4 @@ export { NavBar } from './navBar/ui/NavBar';
 export { UniTable } from './uniTable/ui/UniTable';
 export { PaginationBar } from './paginationBar/ui/PaginationBar';
 export { InfoSection } from './infoSection/ui/InfoSection';
+export { BranchPopup } from './branchPopup/ui/BranchPopup';

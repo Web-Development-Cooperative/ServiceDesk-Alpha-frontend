@@ -8,3 +8,4 @@ export { Arrow } from './arrow/Arrow';
 export { Phone } from './phone/Phone';
 export { Email } from './email/Email';
 export { Place } from './place/Place';
+export { PopupCross } from './popupCross/PopupCross';

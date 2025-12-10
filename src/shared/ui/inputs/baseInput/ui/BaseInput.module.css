@@ -3,6 +3,8 @@
 	border-radius: 0.625rem;
 	border: 1px solid var(--content-border-light);
 
+	background-color: var(--background-input);
+
 	& > input {
 		font-size: 0.875rem;
 		font-weight: 400;
@@ -18,6 +20,6 @@
 	width: 100%;
 }
 .isDisabled {
-	background-color: var(--content-border-light);
+	/* background-color: var(--content-border-light); */
 	border-color: transparent;
 }
