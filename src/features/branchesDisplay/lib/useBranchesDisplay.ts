@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
 
 import { useLazyGetBranchesQuery } from '~~>entities/branches';
@@ -9,6 +9,8 @@ const useBranchesDisplay = () => {
 	// const search = searchParams.get('search') ?? '';
 	const sort = searchParams.get('sort') ?? undefined;
 	const page = searchParams.get('page') ?? '1';
+	const [isOpen, setIsOpen] = useState(false);
+	const [branchId, setBranchId] = useState('');
 
 	const [trigger, { data }] = useLazyGetBranchesQuery();
 
@@ -17,6 +19,10 @@ const useBranchesDisplay = () => {
 	}, [sort, page]);
 
 	return {
+		isOpen,
+		setIsOpen,
+		branchId,
+		setBranchId,
 		data: data?.content,
 	};
 };

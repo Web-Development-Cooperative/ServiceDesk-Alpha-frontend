@@ -9,6 +9,7 @@ const BrightBackground: FC<PropsWithChildren<BrightBackgroundProps>> = ({
 	className,
 	isAction = false,
 	typeBG = 'primary',
+	...props
 }) => {
 	return (
 		<span
@@ -18,6 +19,7 @@ const BrightBackground: FC<PropsWithChildren<BrightBackgroundProps>> = ({
 				{ [styles.isAction]: isAction },
 				className
 			)}
+			{...props}
 		>
 			{children}
 		</span>
