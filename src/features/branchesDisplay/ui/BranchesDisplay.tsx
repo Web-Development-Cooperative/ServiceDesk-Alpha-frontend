@@ -1,18 +1,22 @@
 import { Link } from 'react-router';
 import { clsx } from 'clsx';
 
-import { UniTable } from '~~>shared/ui/others';
+import { EditBranchFlow } from '~~>widgets/editBranchFlow'; // !!forbidden import
+import { BrightBackground, UniTable } from '~~>shared/ui/others';
+import { PencilEdit, Trashcan } from '~~>shared/ui/icons';
 
 import { useBranchesDisplay } from '../lib/useBranchesDisplay';
 import styles from './BranchesDisplay.module.css';
 
 const BranchesDisplay = () => {
-	const { data } = useBranchesDisplay();
+	const { data, isOpen, setIsOpen, branchId, setBranchId } =
+		useBranchesDisplay();
 
 	const renderHead = () => (
 		<>
 			<th className={styles.area}>Регион/область</th>
 			<th>Филиалы</th>
+			<th className={styles.actions}>Действия</th>
 		</>
 	);
 	const renderBody = (
@@ -35,15 +39,36 @@ const BranchesDisplay = () => {
 					<p>{item.address}</p>
 				</Link>
 			</td>
+			<td className={clsx(styles['col-value'])}>
+				<div className={styles['col-actions']}>
+					<BrightBackground
+						onClick={() => {
+							setBranchId(item.id);
+							setIsOpen(true);
+						}}
+						isAction
+					>
+						<PencilEdit />
+					</BrightBackground>
+					<BrightBackground typeBG="danger" isAction>
+						<Trashcan />
+					</BrightBackground>
+				</div>
+			</td>
 		</>
 	);
 
 	return (
-		<UniTable
-			data={data || []}
-			renderHead={renderHead}
-			renderBody={renderBody}
-		/>
+		<>
+			<UniTable
+				data={data || []}
+				renderHead={renderHead}
+				renderBody={renderBody}
+			/>
+			{isOpen && (
+				<EditBranchFlow setIsOpen={setIsOpen} branchId={branchId} />
+			)}
+		</>
 	);
 };
 

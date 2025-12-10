@@ -8,3 +8,6 @@ export {
 
 // lib
 export { mapBranch } from './lib/mapBranch';
+
+// type
+export type { BranchRequestModel } from './model/branch.types';

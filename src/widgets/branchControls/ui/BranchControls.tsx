@@ -9,11 +9,11 @@ import styles from './BranchControls.module.css';
 const BranchControls = () => {
 	return (
 		<div className={styles.controls}>
-			<BaseButton typeButton="base" withoutText>
-				<Link to={ROUTES.BRANCHES}>
+			<Link to={ROUTES.BRANCHES}>
+				<BaseButton typeButton="base" withoutText>
 					<Arrow />
-				</Link>
-			</BaseButton>
+				</BaseButton>
+			</Link>
 			<h1>Название</h1>
 			<div className={styles['btn-wrapper']}>
 				<BaseButton typeButton="base">

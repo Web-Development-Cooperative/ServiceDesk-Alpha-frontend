@@ -6,6 +6,8 @@
 	border: 1px solid var(--content-border-light);
 	outline: none;
 
+	background-color: var(--background-input);
+
 	resize: vertical;
 	transition: border 0.2s ease-in-out;
 
