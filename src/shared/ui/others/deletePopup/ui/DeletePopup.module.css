@@ -1,0 +1,27 @@
+.header {
+	padding: 25px 40px;
+	border-bottom: var(--size-border-width-base) solid var(--border-base);
+
+	background-color: var(--white);
+}
+.body {
+	max-width: 500px;
+	min-width: 420px;
+	padding: 30px 40px;
+	padding-bottom: 36px;
+
+	font: var(--search-s);
+	color: var(--text-description);
+}
+.footer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	column-gap: 25px;
+
+	padding: 20px 40px;
+	border-top: var(--size-border-width-base) solid var(--border-base);
+
+	background-color: var(--white);
+}
