@@ -3,7 +3,6 @@ import type { BaseObject } from '~~>shared/model/baseEntity.types';
 import type { Option } from '~~>shared/ui/inputs';
 
 type BranchPopupProps = {
-	setIsOpen: (_state: boolean) => void;
 	title: string;
 	data: {
 		name: string;
@@ -14,6 +13,7 @@ type BranchPopupProps = {
 		parent: BaseObject;
 	};
 	brancCodes: Array<BaseObject>;
+	brancTypes: Array<BaseObject>;
 	onChangeInputField: (e: ChangeEvent<HTMLInputElement>) => void;
 	onChangeTextareaField: (e: ChangeEvent<HTMLTextAreaElement>) => void;
 	onChangeSelectField: (

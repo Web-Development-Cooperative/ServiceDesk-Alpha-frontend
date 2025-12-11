@@ -1,10 +1,11 @@
 import { PaginationBar } from '~~>shared/ui/others';
 
 import { useBranchParentsPagination } from '../lib/useBranchParentsPagination';
+import type { FC } from 'react';
 
-const BranchParentsPagination = () => {
+const BranchParentsPagination: FC<{ branchId: string }> = ({ branchId }) => {
 	const { data, parentPage, onPageChange, onPageInc, onPageDec } =
-		useBranchParentsPagination();
+		useBranchParentsPagination(branchId);
 
 	return (
 		<PaginationBar

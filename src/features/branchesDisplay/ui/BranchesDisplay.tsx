@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { clsx } from 'clsx';
 
 import { EditBranchFlow } from '~~>widgets/editBranchFlow'; // !!forbidden import
+import { BranchDelete } from '~~>features/branchDelete'; // !!cross-import
 import { BrightBackground, UniTable } from '~~>shared/ui/others';
 import { PencilEdit, Trashcan } from '~~>shared/ui/icons';
 
@@ -9,8 +10,15 @@ import { useBranchesDisplay } from '../lib/useBranchesDisplay';
 import styles from './BranchesDisplay.module.css';
 
 const BranchesDisplay = () => {
-	const { data, isOpen, setIsOpen, branchId, setBranchId } =
-		useBranchesDisplay();
+	const {
+		data,
+		editIsOpen,
+		setEditIsOpen,
+		deleteIsOpen,
+		setDeleteEditIsOpen,
+		branchId,
+		setBranchId,
+	} = useBranchesDisplay();
 
 	const renderHead = () => (
 		<>
@@ -44,13 +52,20 @@ const BranchesDisplay = () => {
 					<BrightBackground
 						onClick={() => {
 							setBranchId(item.id);
-							setIsOpen(true);
+							setEditIsOpen(true);
 						}}
 						isAction
 					>
 						<PencilEdit />
 					</BrightBackground>
-					<BrightBackground typeBG="danger" isAction>
+					<BrightBackground
+						onClick={() => {
+							setBranchId(item.id);
+							setDeleteEditIsOpen(true);
+						}}
+						typeBG="danger"
+						isAction
+					>
 						<Trashcan />
 					</BrightBackground>
 				</div>
@@ -65,8 +80,14 @@ const BranchesDisplay = () => {
 				renderHead={renderHead}
 				renderBody={renderBody}
 			/>
-			{isOpen && (
-				<EditBranchFlow setIsOpen={setIsOpen} branchId={branchId} />
+			{editIsOpen && (
+				<EditBranchFlow setIsOpen={setEditIsOpen} branchId={branchId} />
+			)}
+			{deleteIsOpen && (
+				<BranchDelete
+					setIsOpen={setDeleteEditIsOpen}
+					branchId={branchId}
+				/>
 			)}
 		</>
 	);

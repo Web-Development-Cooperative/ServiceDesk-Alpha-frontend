@@ -1,6 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import { mapBranch, useLazyGetBranchByIdQuery } from '~~>entities/branch';
+import {
+	mapBranch,
+	mapBranchPost,
+	useLazyGetBranchByIdQuery,
+	usePutBranchByIdMutation,
+} from '~~>entities/branch';
+import {
+	mapBranchCode,
+	useLazyGetBranchCodesQuery,
+} from '~~>entities/branchCodes';
+import { useLazyGetBranchTypeesQuery } from '~~>entities/branchTypes';
 
 import { ADD_BRANCH_STEPS } from '../model/EditBranchFlow.consts';
 import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
@@ -13,28 +23,35 @@ const useEditBranchFlow = (
 	branchId: string
 ) => {
 	const [trigger, { data: branchData }] = useLazyGetBranchByIdQuery();
+	const [triggerCodes, { data: codesData }] = useLazyGetBranchCodesQuery();
+	const [triggeTypes, { data: typesData }] = useLazyGetBranchTypeesQuery();
+	const [putBranch] = usePutBranchByIdMutation();
+
+	const mapped = branchData ? mapBranch(branchData) : null;
+	const mappedCodes = codesData?.content
+		? codesData.content.map((o) => mapBranchCode(o))
+		: [];
+
 	const [curStage, setCurStage] = useState<keyof typeof ADD_BRANCH_STEPS>(
 		ADD_BRANCH_STEPS.main
 	);
-	const [data, setData] = useState<BranchRequestModel>(
-		branchData
-			? mapBranch(branchData)
-			: {
-					parent: { id: '-1', name: '' },
-					type: { id: '-1', name: '' },
-					code: { id: '-1', name: '' },
-					name: '',
-					area: '',
-					address: '',
-			  }
-	);
-	const CODES = [
-		{ id: '1', name: 'FIR' },
-		{ id: '2', name: 'SEC' },
-		{ id: '3', name: 'THI' },
-		{ id: '4', name: 'FOO' },
-		{ id: '5', name: 'FIF' },
-	];
+	const [data, setData] = useState<BranchRequestModel>({
+		parent: {
+			id: mapped?.parent?.id || '-1',
+			name: mapped?.parent?.name || '',
+		},
+		type: {
+			id: mapped?.type.id || '-1',
+			name: mapped?.type.name || '',
+		},
+		code: {
+			id: mapped?.code.id || '-1',
+			name: mapped?.code.name || '',
+		},
+		name: mapped?.name || '',
+		area: mapped?.area || '',
+		address: mapped?.address || '',
+	});
 
 	const onChangeInputField = (e: ChangeEvent<HTMLInputElement>) =>
 		setData((cv) => ({ ...cv, [e.target.name]: e.target.value }));
@@ -61,19 +78,51 @@ const useEditBranchFlow = (
 	const onParent = () => setCurStage(ADD_BRANCH_STEPS.chooseParent);
 	const onMain = () => setCurStage(ADD_BRANCH_STEPS.main);
 	const closePopup = () => setPopupState(false);
+	const onSubmit = async () => {
+		try {
+			await putBranch({ branchId, body: mapBranchPost(data) }).unwrap();
+			closePopup();
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
 	useEffect(() => {
 		trigger(branchId);
+		triggerCodes({});
+		triggeTypes({});
 	}, []);
+
+	useEffect(() => {
+		setData({
+			parent: {
+				id: mapped?.parent?.id || '-1',
+				name: mapped?.parent?.name || '',
+			},
+			type: {
+				id: mapped?.type.id || '-1',
+				name: mapped?.type.name || '',
+			},
+			code: {
+				id: mapped?.code.id || '-1',
+				name: mapped?.code.name || '',
+			},
+			name: mapped?.name || '',
+			area: mapped?.area || '',
+			address: mapped?.address || '',
+		});
+	}, [branchData]);
 
 	return {
 		curStage,
 		data,
-		brancCodes: CODES,
+		brancCodes: mappedCodes,
+		brancTypes: typesData?.content || [],
 		onChangeInputField,
 		onChangeTextareaField,
 		onChangeSelectField,
 		onChangeParentField,
+		onSubmit,
 		onParent,
 		onMain,
 		closePopup,

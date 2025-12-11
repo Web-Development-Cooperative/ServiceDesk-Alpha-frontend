@@ -1,14 +1,18 @@
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router';
 
-import { useLazyGetBranchesQuery } from '~~>entities/branches';
+import {
+	useLazyGetBranchesParentsQuery,
+	useLazyGetBranchesQuery,
+} from '~~>entities/branches';
 
-const useBranchParentsPagination = () => {
+const useBranchParentsPagination = (branchId: string) => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const parentPage = searchParams.get('parentPage') ?? '1';
 	const parentSort = searchParams.get('parentSort') ?? undefined;
 
-	const [trigger, { data }] = useLazyGetBranchesQuery();
+	const [trigger, { data }] = useLazyGetBranchesParentsQuery();
+	const [triggerAll, { data: dataAll }] = useLazyGetBranchesQuery();
 
 	const onPageChange = (newPage: number) => {
 		setSearchParams({
@@ -30,13 +34,31 @@ const useBranchParentsPagination = () => {
 	};
 
 	useEffect(() => {
-		trigger(
-			{ sort: parentSort?.split('&'), page: String(+parentPage - 1) },
-			true
-		);
+		if (branchId === '0')
+			triggerAll(
+				{ sort: parentSort?.split('&'), page: String(+parentPage - 1) },
+				true
+			);
+		else
+			trigger(
+				{
+					url: branchId,
+					params: {
+						sort: parentSort?.split('&'),
+						page: String(+parentPage - 1),
+					},
+				},
+				true
+			);
 	}, [parentSort, parentPage]);
 
-	return { data, parentPage, onPageChange, onPageInc, onPageDec };
+	return {
+		data: branchId === '0' ? dataAll : data,
+		parentPage,
+		onPageChange,
+		onPageInc,
+		onPageDec,
+	};
 };
 
 export { useBranchParentsPagination };

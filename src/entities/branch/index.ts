@@ -7,7 +7,7 @@ export {
 } from './api/branch.api';
 
 // lib
-export { mapBranch } from './lib/mapBranch';
+export { mapBranch, mapBranchPost } from './lib/mapBranch';
 
 // type
 export type { BranchRequestModel } from './model/branch.types';

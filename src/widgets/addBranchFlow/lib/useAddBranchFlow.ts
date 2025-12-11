@@ -1,4 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import {
+	mapBranchCode,
+	useLazyGetBranchCodesQuery,
+} from '~~>entities/branchCodes';
+import { useLazyGetBranchTypeesQuery } from '~~>entities/branchTypes';
+import { mapBranchPost, usePostBranchMutation } from '~~>entities/branch';
 
 import { ADD_BRANCH_STEPS } from '../model/addBranchFlow.consts';
 import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
@@ -7,6 +14,14 @@ import type { Option } from '~~>shared/ui/inputs';
 import type { BaseObject } from '~~>shared/model/baseEntity.types';
 
 const useAddBranchFlow = (setPopupState: Dispatch<SetStateAction<boolean>>) => {
+	const [triggerCodes, { data: codesData }] = useLazyGetBranchCodesQuery();
+	const [triggeTypes, { data: typesData }] = useLazyGetBranchTypeesQuery();
+	const [postBranch] = usePostBranchMutation();
+
+	const mappedCodes = codesData?.content
+		? codesData.content.map((o) => mapBranchCode(o))
+		: [];
+
 	const [curStage, setCurStage] = useState<keyof typeof ADD_BRANCH_STEPS>(
 		ADD_BRANCH_STEPS.main
 	);
@@ -18,13 +33,6 @@ const useAddBranchFlow = (setPopupState: Dispatch<SetStateAction<boolean>>) => {
 		area: '',
 		address: '',
 	});
-	const CODES = [
-		{ id: '1', name: 'FIR' },
-		{ id: '2', name: 'SEC' },
-		{ id: '3', name: 'THI' },
-		{ id: '4', name: 'FOO' },
-		{ id: '5', name: 'FIF' },
-	];
 
 	const onChangeInputField = (e: ChangeEvent<HTMLInputElement>) =>
 		setData((cv) => ({ ...cv, [e.target.name]: e.target.value }));
@@ -51,15 +59,30 @@ const useAddBranchFlow = (setPopupState: Dispatch<SetStateAction<boolean>>) => {
 	const onParent = () => setCurStage(ADD_BRANCH_STEPS.chooseParent);
 	const onMain = () => setCurStage(ADD_BRANCH_STEPS.main);
 	const closePopup = () => setPopupState(false);
+	const onSubmit = async () => {
+		try {
+			await postBranch(mapBranchPost(data)).unwrap();
+			closePopup();
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
+	useEffect(() => {
+		triggerCodes({});
+		triggeTypes({});
+	}, []);
 
 	return {
 		curStage,
 		data,
-		brancCodes: CODES,
+		brancCodes: mappedCodes,
+		brancTypes: typesData?.content || [],
 		onChangeInputField,
 		onChangeTextareaField,
 		onChangeSelectField,
 		onChangeParentField,
+		onSubmit,
 		onParent,
 		onMain,
 		closePopup,

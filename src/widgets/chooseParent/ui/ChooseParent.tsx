@@ -5,17 +5,17 @@ import { BranchParentsSort } from '~~>features/branchParentsSort';
 import { BranchParentsDisplay } from '~~>features/branchParentsDisplay';
 import { TableWithPagination } from '~~>widgets/tableWithPagination';
 import { BranchParentsPagination } from '~~>features/branchParentsPagination';
-import { BasePopup } from '~~>shared/ui/popups';
 import { BaseButton } from '~~>shared/ui/buttons';
+import { CheckMark } from '~~>shared/ui/icons';
 
 import styles from './ChooseParent.module.css';
 import type { FC } from 'react';
 import type { ChooseParentProps } from '../model/ChooseParent.types';
 
 const ChooseParent: FC<ChooseParentProps> = ({
-	setIsOpen,
 	title,
 	data,
+	branchId,
 	onSubmit,
 	onCancel,
 	submitText,
@@ -24,7 +24,7 @@ const ChooseParent: FC<ChooseParentProps> = ({
 	const [localBranch, setLocalBranch] = useState(data.parent);
 
 	return (
-		<BasePopup setIsOpen={setIsOpen} withCross>
+		<>
 			<div className={styles.header}>
 				<h3>{title}</h3>
 			</div>
@@ -33,12 +33,17 @@ const ChooseParent: FC<ChooseParentProps> = ({
 					<BranchParentsSearch />
 					<BranchParentsSort />
 				</div>
+				<div className={styles.branch}>
+					<CheckMark />
+					<p>Выбран: {localBranch.name}</p>
+				</div>
 				<TableWithPagination>
 					<BranchParentsDisplay
 						branch={localBranch}
+						branchId={branchId}
 						onSelect={(value) => setLocalBranch(value)}
 					/>
-					<BranchParentsPagination />
+					<BranchParentsPagination branchId={branchId} />
 				</TableWithPagination>
 			</div>
 			<div className={styles.footer}>
@@ -49,7 +54,7 @@ const ChooseParent: FC<ChooseParentProps> = ({
 					{submitText}
 				</BaseButton>
 			</div>
-		</BasePopup>
+		</>
 	);
 };
 

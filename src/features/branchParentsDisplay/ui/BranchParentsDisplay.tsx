@@ -9,13 +9,14 @@ import type { BranchParentsDisplayProps } from '../model/branchParentsDisplay.ty
 
 const BranchParentsDisplay: FC<BranchParentsDisplayProps> = ({
 	branch,
+	branchId,
 	onSelect,
 }) => {
-	const { data } = useBranchParentsDisplay();
+	const { data } = useBranchParentsDisplay(branchId);
 
 	const renderHead = () => (
 		<>
-			<th className={styles.area}>Код филиала</th>
+			<th className={styles.area}>ID филиала</th>
 			<th>Название филиала</th>
 		</>
 	);

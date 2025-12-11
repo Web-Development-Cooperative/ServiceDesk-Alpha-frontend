@@ -1,4 +1,3 @@
-import { BasePopup } from '~~>shared/ui/popups';
 import { BaseButton } from '~~>shared/ui/buttons';
 import { BaseInput, Select, Textarea } from '~~>shared/ui/inputs';
 
@@ -7,10 +6,10 @@ import type { FC } from 'react';
 import type { BranchPopupProps } from '../model/branchPopup.types';
 
 const BranchPopup: FC<BranchPopupProps> = ({
-	setIsOpen,
 	title,
 	data,
 	brancCodes,
+	brancTypes,
 	onChangeInputField,
 	onChangeTextareaField,
 	onChangeSelectField,
@@ -21,7 +20,7 @@ const BranchPopup: FC<BranchPopupProps> = ({
 	cancelText,
 }) => {
 	return (
-		<BasePopup setIsOpen={setIsOpen} withCross>
+		<>
 			<div className={styles.header}>
 				<h3>{title}</h3>
 			</div>
@@ -78,7 +77,7 @@ const BranchPopup: FC<BranchPopupProps> = ({
 						Тип филиала <b>*</b>
 					</p>
 					<Select
-						options={brancCodes.map((o) => ({
+						options={brancTypes.map((o) => ({
 							value: o.id,
 							label: o.name,
 						}))}
@@ -88,9 +87,7 @@ const BranchPopup: FC<BranchPopupProps> = ({
 					/>
 				</div>
 				<div className={styles['row']}>
-					<p>
-						Родительский филиал <b>*</b>
-					</p>
+					<p>Родительский филиал</p>
 					<BaseInput
 						placeholder="Нажмите, чтобы выбрать филиал"
 						value={data.parent.name}
@@ -105,7 +102,7 @@ const BranchPopup: FC<BranchPopupProps> = ({
 				</BaseButton>
 				<BaseButton onClick={onSubmit}>{submitText}</BaseButton>
 			</div>
-		</BasePopup>
+		</>
 	);
 };
 
