@@ -11,10 +11,12 @@ const AddBranchFlow: FC<AddBranchFlowProps> = ({ setIsOpen }) => {
 		curStage,
 		data,
 		brancCodes,
+		brancTypes,
 		onChangeInputField,
 		onChangeTextareaField,
 		onChangeSelectField,
 		onChangeParentField,
+		onSubmit,
 		closePopup,
 		onParent,
 		onMain,
@@ -30,11 +32,12 @@ const AddBranchFlow: FC<AddBranchFlowProps> = ({ setIsOpen }) => {
 						title="Добавить филиал"
 						data={data}
 						brancCodes={brancCodes}
+						brancTypes={brancTypes}
 						onChangeInputField={onChangeInputField}
 						onChangeTextareaField={onChangeTextareaField}
 						onChangeSelectField={onChangeSelectField}
 						openParentsPopup={onParent}
-						onSubmit={() => console.log(data)}
+						onSubmit={onSubmit}
 						onCancel={closePopup}
 						cancelText="Отмена"
 						submitText="Сохранить"
@@ -48,8 +51,8 @@ const AddBranchFlow: FC<AddBranchFlowProps> = ({ setIsOpen }) => {
 						title="Выбор родительского филиала"
 						onSubmit={onChangeParentField}
 						onCancel={onMain}
-						cancelText="Отмена"
-						submitText="Сохранить"
+						cancelText="Отменить"
+						submitText="Выбрать"
 					/>
 				);
 

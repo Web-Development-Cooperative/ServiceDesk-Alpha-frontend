@@ -36,9 +36,10 @@ const ChooseParent: FC<ChooseParentProps> = ({
 				<TableWithPagination>
 					<BranchParentsDisplay
 						branch={localBranch}
+						branchId={'0'}
 						onSelect={(value) => setLocalBranch(value)}
 					/>
-					<BranchParentsPagination />
+					<BranchParentsPagination branchId={'0'} />
 				</TableWithPagination>
 			</div>
 			<div className={styles.footer}>

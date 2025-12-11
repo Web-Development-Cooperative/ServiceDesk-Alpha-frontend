@@ -2,7 +2,7 @@ import type { BaseObject } from '~~>shared/model/baseEntity.types';
 
 type BranchRequestUrl = string;
 type BranchRequestBody = {
-	parentId: string;
+	parentId: string | undefined;
 	typeId: string;
 	codeId: string;
 	name: string;
@@ -29,7 +29,7 @@ type BranchResponseBody = {
 		name: string;
 		area: string;
 		address: string;
-	};
+	} | null;
 	type: {
 		id: string;
 		name: string;
@@ -48,9 +48,11 @@ type BranchRequestModel = Omit<
 	'parentId' | 'codeId' | 'typeId'
 > & { parent: BaseObject; code: BaseObject; type: BaseObject };
 type BrancModel = Omit<BranchResponseBody, 'parent' | 'code'> & {
-	parent: Omit<BranchResponseBody['parent'], 'code'> & {
-		code: BaseObject;
-	};
+	parent:
+		| (Omit<NonNullable<BranchResponseBody['parent']>, 'code'> & {
+				code: BaseObject;
+		  })
+		| null;
 	code: BaseObject;
 };
 

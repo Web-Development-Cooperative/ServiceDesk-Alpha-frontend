@@ -11,6 +11,7 @@ const BranchPopup: FC<BranchPopupProps> = ({
 	title,
 	data,
 	brancCodes,
+	brancTypes,
 	onChangeInputField,
 	onChangeTextareaField,
 	onChangeSelectField,
@@ -78,7 +79,7 @@ const BranchPopup: FC<BranchPopupProps> = ({
 						Тип филиала <b>*</b>
 					</p>
 					<Select
-						options={brancCodes.map((o) => ({
+						options={brancTypes.map((o) => ({
 							value: o.id,
 							label: o.name,
 						}))}
@@ -88,9 +89,7 @@ const BranchPopup: FC<BranchPopupProps> = ({
 					/>
 				</div>
 				<div className={styles['row']}>
-					<p>
-						Родительский филиал <b>*</b>
-					</p>
+					<p>Родительский филиал</p>
 					<BaseInput
 						placeholder="Нажмите, чтобы выбрать филиал"
 						value={data.parent.name}

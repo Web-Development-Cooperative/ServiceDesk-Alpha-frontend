@@ -10,14 +10,14 @@ import type {
 	BranchTypeResponseBody,
 } from '../model/branchTypes.types';
 
-const ticketCategoryApi = baseApi.injectEndpoints({
+const branchTypesApi = baseApi.injectEndpoints({
 	endpoints: (build) => ({
 		postBranchType: build.mutation<
 			BranchTypeResponseBody,
 			BranchTypeRequestBody
 		>({
 			query: (body) => ({
-				url: '/ticket-categories',
+				url: '/branch-types',
 				method: 'POST',
 				body,
 			}),
@@ -25,10 +25,10 @@ const ticketCategoryApi = baseApi.injectEndpoints({
 		}),
 		getBranchTypeById: build.query<
 			BranchTypeResponseBody,
-			BranchTypeRequestParams
+			BranchTypeRequestUrl
 		>({
-			query: () => ({
-				url: '/ticket-categories',
+			query: (branchId) => ({
+				url: `/branch-types/${branchId}`,
 				method: 'GET',
 			}),
 			providesTags: [BRANCH_TYPE],
@@ -37,9 +37,10 @@ const ticketCategoryApi = baseApi.injectEndpoints({
 			BranchTypesResponseBody,
 			BranchTypeRequestParams
 		>({
-			query: (branchId) => ({
-				url: `/ticket-categories/${branchId}`,
+			query: (params) => ({
+				url: '/branch-types',
 				method: 'GET',
+				params,
 			}),
 			providesTags: [BRANCH_TYPES],
 		}),
@@ -48,7 +49,7 @@ const ticketCategoryApi = baseApi.injectEndpoints({
 			BranchTypeRequestPutPayload
 		>({
 			query: ({ url, body }) => ({
-				url: `/ticket-categories/${url}`,
+				url: `/branch-types/${url}`,
 				method: 'PUT',
 				body,
 			}),
@@ -56,7 +57,7 @@ const ticketCategoryApi = baseApi.injectEndpoints({
 		}),
 		deleteBranchTypeById: build.mutation<void, BranchTypeRequestUrl>({
 			query: (branchId) => ({
-				url: `/ticket-categories/${branchId}`,
+				url: `/branch-types/${branchId}`,
 				method: 'DELETE',
 			}),
 			invalidatesTags: [BRANCH_TYPE, BRANCH_TYPES],
@@ -67,13 +68,15 @@ const ticketCategoryApi = baseApi.injectEndpoints({
 const {
 	usePostBranchTypeMutation,
 	useLazyGetBranchTypeByIdQuery,
+	useLazyGetBranchTypeesQuery,
 	usePutBranchTypeByIdMutation,
 	useDeleteBranchTypeByIdMutation,
-} = ticketCategoryApi;
+} = branchTypesApi;
 
 export {
 	usePostBranchTypeMutation,
 	useLazyGetBranchTypeByIdQuery,
+	useLazyGetBranchTypeesQuery,
 	usePutBranchTypeByIdMutation,
 	useDeleteBranchTypeByIdMutation,
 };

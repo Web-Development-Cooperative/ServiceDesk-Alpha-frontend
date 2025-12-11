@@ -11,10 +11,12 @@ const EditBranchFlow: FC<EditBranchFlowProps> = ({ setIsOpen, branchId }) => {
 		curStage,
 		data,
 		brancCodes,
+		brancTypes,
 		onChangeInputField,
 		onChangeTextareaField,
 		onChangeSelectField,
 		onChangeParentField,
+		onSubmit,
 		closePopup,
 		onParent,
 		onMain,
@@ -30,11 +32,12 @@ const EditBranchFlow: FC<EditBranchFlowProps> = ({ setIsOpen, branchId }) => {
 						title="Добавить филиал"
 						data={data}
 						brancCodes={brancCodes}
+						brancTypes={brancTypes}
 						onChangeInputField={onChangeInputField}
 						onChangeTextareaField={onChangeTextareaField}
 						onChangeSelectField={onChangeSelectField}
 						openParentsPopup={onParent}
-						onSubmit={() => console.log(data)}
+						onSubmit={onSubmit}
 						onCancel={closePopup}
 						cancelText="Отмена"
 						submitText="Сохранить"
@@ -45,11 +48,12 @@ const EditBranchFlow: FC<EditBranchFlowProps> = ({ setIsOpen, branchId }) => {
 					<ChooseParent
 						setIsOpen={setIsOpen}
 						data={data}
+						branchId={branchId}
 						title="Выбор родительского филиала"
 						onSubmit={onChangeParentField}
 						onCancel={onMain}
-						cancelText="Отмена"
-						submitText="Сохранить"
+						cancelText="Отменить"
+						submitText="Выбрать"
 					/>
 				);
 

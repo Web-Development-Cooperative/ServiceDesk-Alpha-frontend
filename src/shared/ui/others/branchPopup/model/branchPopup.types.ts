@@ -14,6 +14,7 @@ type BranchPopupProps = {
 		parent: BaseObject;
 	};
 	brancCodes: Array<BaseObject>;
+	brancTypes: Array<BaseObject>;
 	onChangeInputField: (e: ChangeEvent<HTMLInputElement>) => void;
 	onChangeTextareaField: (e: ChangeEvent<HTMLTextAreaElement>) => void;
 	onChangeSelectField: (

@@ -5,6 +5,7 @@ type ChooseParentProps = {
 	setIsOpen: (_state: boolean) => void;
 	title: string;
 	data: BranchRequestModel;
+	branchId: string;
 	onSubmit: (value: BaseObject) => void;
 	onCancel: () => void;
 	submitText: string;
