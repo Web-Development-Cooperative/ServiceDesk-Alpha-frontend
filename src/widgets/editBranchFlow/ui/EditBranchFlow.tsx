@@ -1,8 +1,9 @@
+import { BasePopup } from '~~>shared/ui/popups';
 import { BranchPopup } from '~~>shared/ui/others';
 
 import { useEditBranchFlow } from '../lib/useEditBranchFlow';
 import { ADD_BRANCH_STEPS } from '../model/EditBranchFlow.consts';
-import { ChooseParent } from './chooseParent/ui/ChooseParent';
+import { ChooseParent } from '../../chooseParent/ui/ChooseParent';
 import type { FC } from 'react';
 import type { EditBranchFlowProps } from '../model/EditBranchFlow.types';
 
@@ -22,13 +23,11 @@ const EditBranchFlow: FC<EditBranchFlowProps> = ({ setIsOpen, branchId }) => {
 		onMain,
 	} = useEditBranchFlow(setIsOpen, branchId);
 
-	// TODO, все таки поменять попап так, чтобы BasePopup был общим с хедером и футером
 	const render = (key: keyof typeof ADD_BRANCH_STEPS) => {
 		switch (key) {
 			case ADD_BRANCH_STEPS.main:
 				return (
 					<BranchPopup
-						setIsOpen={setIsOpen}
 						title="Добавить филиал"
 						data={data}
 						brancCodes={brancCodes}
@@ -46,7 +45,6 @@ const EditBranchFlow: FC<EditBranchFlowProps> = ({ setIsOpen, branchId }) => {
 			case ADD_BRANCH_STEPS.chooseParent:
 				return (
 					<ChooseParent
-						setIsOpen={setIsOpen}
 						data={data}
 						branchId={branchId}
 						title="Выбор родительского филиала"
@@ -62,7 +60,11 @@ const EditBranchFlow: FC<EditBranchFlowProps> = ({ setIsOpen, branchId }) => {
 		}
 	};
 
-	return render(curStage);
+	return (
+		<BasePopup setIsOpen={setIsOpen} withCross>
+			{render(curStage)}
+		</BasePopup>
+	);
 };
 
 export { EditBranchFlow };

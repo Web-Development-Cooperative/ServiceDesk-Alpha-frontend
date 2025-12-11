@@ -78,7 +78,14 @@ const useEditBranchFlow = (
 	const onParent = () => setCurStage(ADD_BRANCH_STEPS.chooseParent);
 	const onMain = () => setCurStage(ADD_BRANCH_STEPS.main);
 	const closePopup = () => setPopupState(false);
-	const onSubmit = () => putBranch({ branchId, body: mapBranchPost(data) });
+	const onSubmit = async () => {
+		try {
+			await putBranch({ branchId, body: mapBranchPost(data) }).unwrap();
+			closePopup();
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
 	useEffect(() => {
 		trigger(branchId);

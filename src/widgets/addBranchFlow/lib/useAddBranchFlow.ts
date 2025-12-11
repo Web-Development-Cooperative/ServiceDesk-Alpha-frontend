@@ -59,7 +59,14 @@ const useAddBranchFlow = (setPopupState: Dispatch<SetStateAction<boolean>>) => {
 	const onParent = () => setCurStage(ADD_BRANCH_STEPS.chooseParent);
 	const onMain = () => setCurStage(ADD_BRANCH_STEPS.main);
 	const closePopup = () => setPopupState(false);
-	const onSubmit = () => postBranch(mapBranchPost(data));
+	const onSubmit = async () => {
+		try {
+			await postBranch(mapBranchPost(data)).unwrap();
+			closePopup();
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
 	useEffect(() => {
 		triggerCodes({});

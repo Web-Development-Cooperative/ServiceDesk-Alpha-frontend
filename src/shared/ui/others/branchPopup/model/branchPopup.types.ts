@@ -3,7 +3,6 @@ import type { BaseObject } from '~~>shared/model/baseEntity.types';
 import type { Option } from '~~>shared/ui/inputs';
 
 type BranchPopupProps = {
-	setIsOpen: (_state: boolean) => void;
 	title: string;
 	data: {
 		name: string;
