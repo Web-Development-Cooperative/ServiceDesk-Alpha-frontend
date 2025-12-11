@@ -69,8 +69,8 @@ const useAddBranchFlow = (setPopupState: Dispatch<SetStateAction<boolean>>) => {
 	};
 
 	useEffect(() => {
-		triggerCodes({});
-		triggeTypes({});
+		triggerCodes({}, true);
+		triggeTypes({}, true);
 	}, []);
 
 	return {

@@ -88,9 +88,9 @@ const useEditBranchFlow = (
 	};
 
 	useEffect(() => {
-		trigger(branchId);
-		triggerCodes({});
-		triggeTypes({});
+		trigger(branchId, true);
+		triggerCodes({}, true);
+		triggeTypes({}, true);
 	}, []);
 
 	useEffect(() => {
