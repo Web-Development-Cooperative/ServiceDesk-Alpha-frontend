@@ -27,7 +27,6 @@ const BranchesDisplay = () => {
 			<th className={styles.actions}>Действия</th>
 		</>
 	);
-	// TODO добавить ссылку в экшеах
 	const renderBody = (
 		item: NonNullable<typeof data>[number],
 		_index: number
@@ -49,7 +48,7 @@ const BranchesDisplay = () => {
 				</Link>
 			</td>
 			<td className={clsx(styles['col-value'])}>
-				<div className={styles['col-actions']}>
+				<Link to={item.id} className={styles['col-actions']}>
 					<BrightBackground
 						onClick={() => {
 							setBranchId(item.id);
@@ -69,7 +68,7 @@ const BranchesDisplay = () => {
 					>
 						<Trashcan />
 					</BrightBackground>
-				</div>
+				</Link>
 			</td>
 		</>
 	);
