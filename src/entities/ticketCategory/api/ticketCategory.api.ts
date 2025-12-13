@@ -28,21 +28,22 @@ const ticketCategoryApi = baseApi.injectEndpoints({
 		}),
 		getTicketCategoryById: build.query<
 			TicketCategoryResponseBody,
-			TicketCategoryRequestParams
-		>({
-			query: () => ({
-				url: '/ticket-categories',
-				method: 'GET',
-			}),
-			providesTags: [TICKET_CATEGORY],
-		}),
-		getTicketCategoryes: build.query<
-			TicketCategoriesResponseBody,
-			TicketCategoryRequestParams
+			TicketCategoryRequestUrl
 		>({
 			query: (branchId) => ({
 				url: `/ticket-categories/${branchId}`,
 				method: 'GET',
+			}),
+			providesTags: [TICKET_CATEGORY],
+		}),
+		getTicketCategories: build.query<
+			TicketCategoriesResponseBody,
+			TicketCategoryRequestParams
+		>({
+			query: (params) => ({
+				url: '/ticket-categories',
+				method: 'GET',
+				params: { ...params, size: 6 },
 			}),
 			providesTags: [TICKET_CATEGORIES],
 		}),
@@ -73,6 +74,7 @@ const ticketCategoryApi = baseApi.injectEndpoints({
 const {
 	usePostTicketCategoryMutation,
 	useLazyGetTicketCategoryByIdQuery,
+	useLazyGetTicketCategoriesQuery,
 	usePutTicketCategoryByIdMutation,
 	useDeleteTicketCategoryByIdMutation,
 } = ticketCategoryApi;
@@ -80,6 +82,7 @@ const {
 export {
 	usePostTicketCategoryMutation,
 	useLazyGetTicketCategoryByIdQuery,
+	useLazyGetTicketCategoriesQuery,
 	usePutTicketCategoryByIdMutation,
 	useDeleteTicketCategoryByIdMutation,
 };

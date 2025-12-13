@@ -27,6 +27,7 @@ const BranchesDisplay = () => {
 			<th className={styles.actions}>Действия</th>
 		</>
 	);
+	// TODO добавить ссылку в экшеах
 	const renderBody = (
 		item: NonNullable<typeof data>[number],
 		_index: number

@@ -10,3 +10,4 @@ export { Email } from './email/Email';
 export { Place } from './place/Place';
 export { PopupCross } from './popupCross/PopupCross';
 export { CheckMark } from './checkMark/CheckMark';
+export { Clock } from './clock/Clock';

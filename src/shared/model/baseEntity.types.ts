@@ -1,4 +1,4 @@
-import type { ROLES } from '~~>shared/model/baseConsts';
+import type { PRIORITY, ROLES } from '~~>shared/model/baseConsts';
 
 type BaseObject = {
 	id: string;
@@ -9,7 +9,7 @@ type Category = {
 	id: string;
 	name: string;
 	description: string;
-	priority: string;
+	priority: keyof typeof PRIORITY;
 	deadlineHours: number;
 	params: {
 		needApproval: boolean;

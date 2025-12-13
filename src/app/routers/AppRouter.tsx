@@ -10,6 +10,9 @@ const LoginPage = lazy(() => import('~~>pages/login'));
 const ApplicationsPage = lazy(() => import('~~>pages/applications'));
 const BranchesPage = lazy(() => import('~~>pages/branches'));
 const BranchPage = lazy(() => import('~~>pages/branch'));
+const ApplicationsCategoriesPage = lazy(
+	() => import('~~>pages/applicationsCategories')
+);
 
 const router = createBrowserRouter([
 	{
@@ -53,10 +56,10 @@ const router = createBrowserRouter([
 				),
 			},
 			{
-				path: ROUTES.ADD_BRANCH,
+				path: ROUTES.APPLICATIONS_CATEGORIES,
 				element: (
 					<Suspense fallback={<div>Загрузка компонента...</div>}>
-						<>Скоро</>
+						<ApplicationsCategoriesPage />
 					</Suspense>
 				),
 			},

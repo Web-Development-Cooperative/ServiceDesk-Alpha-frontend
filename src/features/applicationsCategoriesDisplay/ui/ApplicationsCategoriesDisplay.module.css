@@ -1,0 +1,57 @@
+.branch-name {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 10px;
+
+	padding: 22px 33px;
+
+	font: var(--bold-column-xl);
+	color: var(--text-base);
+	vertical-align: text-top;
+}
+.name,
+.description,
+.prio,
+.time,
+.actions {
+	font: var(--base-m);
+}
+.name {
+	width: 25%;
+}
+.description {
+	width: 35%;
+}
+.actions {
+	width: 10%;
+}
+.col-value {
+	padding: 0 !important;
+	text-align: start;
+}
+.col-value__name p,
+.col-value__description p,
+.col-value__priority div,
+.col-value__time div {
+	height: 100%;
+	padding: 22px 33px;
+
+	color: var(--text-base);
+}
+.col-value__name p {
+	font: var(--bold-column-xl);
+}
+.col-actions {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	column-gap: 10px;
+
+	padding: 22px 33px;
+
+	& > span {
+		cursor: pointer;
+	}
+}
