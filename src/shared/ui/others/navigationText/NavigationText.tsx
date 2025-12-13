@@ -10,16 +10,18 @@ const NavigationText: FC<
 > = ({ children, className, to, ...rest }) => {
 	const location = useLocation();
 
-	const isPartiallyActive = location.pathname.startsWith(to.toString());
+	const isPartiallyActive = location.pathname.startsWith(to.toString() + '/');
 
 	return (
 		<NavLink
 			to={to}
-			className={clsx(
-				styles['navigation-text'],
-				{ [styles.active]: isPartiallyActive },
-				className
-			)}
+			className={({ isActive }) =>
+				clsx(
+					styles['navigation-text'],
+					{ [styles.active]: isPartiallyActive || isActive },
+					className
+				)
+			}
 			{...rest}
 		>
 			{children}

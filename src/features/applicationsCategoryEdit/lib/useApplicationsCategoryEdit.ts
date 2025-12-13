@@ -15,7 +15,7 @@ const useApplicationsCategoryEdit = (
 	applicationsCategoryId: string
 ) => {
 	const [trigger, { data: branchData }] = useLazyGetTicketCategoryByIdQuery();
-	const [postTicketCategory] = usePutTicketCategoryByIdMutation();
+	const [putTicketCategory] = usePutTicketCategoryByIdMutation();
 
 	const [data, setData] = useState<TicketCategoryRequestBody>({
 		name: branchData?.name || '',
@@ -59,7 +59,7 @@ const useApplicationsCategoryEdit = (
 	const closePopup = () => setPopupState(false);
 	const onSubmit = async () => {
 		try {
-			await postTicketCategory({
+			await putTicketCategory({
 				url: applicationsCategoryId,
 				body: data,
 			}).unwrap();

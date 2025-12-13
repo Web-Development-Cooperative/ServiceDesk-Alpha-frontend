@@ -40,7 +40,7 @@ const branchTypesApi = baseApi.injectEndpoints({
 			query: (params) => ({
 				url: '/branch-types',
 				method: 'GET',
-				params,
+				params: { ...params, size: 6 },
 			}),
 			providesTags: [BRANCH_TYPES],
 		}),

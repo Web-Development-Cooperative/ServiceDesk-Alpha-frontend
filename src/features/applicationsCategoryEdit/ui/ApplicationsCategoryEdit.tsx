@@ -21,7 +21,7 @@ const ApplicationsCategoryEdit: FC<ApplicationsCategoryEditProps> = ({
 	return (
 		<BasePopup setIsOpen={setIsOpen} withCross>
 			<ApplicationsCategoryPopup
-				title="Добавить категорию"
+				title="Изменить категорию"
 				data={data}
 				onChangeInputField={onChangeInputField}
 				onChangeInputNumberField={onChangeInputNumberField}
