@@ -11,7 +11,10 @@ const BranchParentsPagination: FC<{ branchId: string }> = ({ branchId }) => {
 		<PaginationBar
 			maxPage={data?.totalPages || 1}
 			totalElements={data?.totalElements || 0}
-			cardinality={(data?.content.length || 0) * +parentPage}
+			cardinality={
+				(data?.content.length || 0) +
+				(data?.size || 0) * (+parentPage - 1)
+			}
 			currentPage={+parentPage}
 			onPageChange={onPageChange}
 			onPageInc={onPageInc}

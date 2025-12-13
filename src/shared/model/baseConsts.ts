@@ -3,4 +3,11 @@ const ROLES = {
 	ROLE_USER: 'ROLE_USER',
 } as const;
 
-export { ROLES };
+const PRIORITY = {
+	LOW: 'LOW',
+	NORMAL: 'NORMAL',
+	HIGH: 'HIGH',
+	CRITICAL: 'CRITICAL',
+} as const;
+
+export { ROLES, PRIORITY };

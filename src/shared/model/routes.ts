@@ -2,8 +2,8 @@ const ROUTES = {
 	LOGIN: '/login',
 	HOME: '/',
 	BRANCHES: '/branches',
-	ADD_BRANCH: '/branches/add-branch',
 	BRANCH: '/branches/:branch-id',
+	APPLICATIONS_CATEGORIES: '/application-categories',
 	APPLICATIONS: '/applications',
 } as const;
 
@@ -11,8 +11,8 @@ const ADAPTER_ROUTES_BREADCRUMBS = {
 	'/': 'Главная',
 	'/login': 'Вход',
 	'/branches': 'Филиалы',
-	'/branches/add-branch': 'Добавить филиал',
 	'/branches/:branch-id': 'Филиал:',
+	'/application-categories': 'Категории заявок',
 	'/applications': 'Мои заявки',
 } as const;
 
@@ -24,6 +24,12 @@ type PathParams = {
 		objectId: string;
 	};
 	[ROUTES.BRANCHES]: {
+		objectId: string;
+	};
+	[ROUTES.BRANCH]: {
+		objectId: string;
+	};
+	[ROUTES.APPLICATIONS_CATEGORIES]: {
 		objectId: string;
 	};
 	[ROUTES.APPLICATIONS]: {

@@ -1,10 +1,10 @@
 import { PaginationBar } from '~~>shared/ui/others';
 
-import { useBranchUsersPagination } from '../lib/useBranchUsersPagination';
+import { useApplicationsCategoriesPagination } from '../lib/useApplicationsCategoriesPagination';
 
-const BranchUsersPagination = () => {
+const ApplicationsCategoriesPagination = () => {
 	const { data, page, onPageChange, onPageInc, onPageDec } =
-		useBranchUsersPagination();
+		useApplicationsCategoriesPagination();
 
 	return (
 		<PaginationBar
@@ -21,4 +21,4 @@ const BranchUsersPagination = () => {
 	);
 };
 
-export { BranchUsersPagination };
+export { ApplicationsCategoriesPagination };
