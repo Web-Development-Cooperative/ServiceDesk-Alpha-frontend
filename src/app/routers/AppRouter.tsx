@@ -13,6 +13,7 @@ const BranchPage = lazy(() => import('~~>pages/branch'));
 const ApplicationsCategoriesPage = lazy(
 	() => import('~~>pages/applicationsCategories')
 );
+const BranchesTypesPage = lazy(() => import('~~>pages/branchesTypes'));
 
 const router = createBrowserRouter([
 	{
@@ -60,6 +61,14 @@ const router = createBrowserRouter([
 				element: (
 					<Suspense fallback={<div>Загрузка компонента...</div>}>
 						<ApplicationsCategoriesPage />
+					</Suspense>
+				),
+			},
+			{
+				path: ROUTES.BRANCHES_TYPES,
+				element: (
+					<Suspense fallback={<div>Загрузка компонента...</div>}>
+						<BranchesTypesPage />
 					</Suspense>
 				),
 			},

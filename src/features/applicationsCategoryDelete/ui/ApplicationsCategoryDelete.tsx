@@ -12,8 +12,7 @@ const ApplicationsCategoryDelete: FC<ApplicationsCategoryDeleteProps> = ({
 		setIsOpen,
 		applicationsCategoryId,
 	});
-	const text =
-		'Вы уверены, что хотите удалить категорию “Технические проблемы и доступы”? Все заявки этой категории будут удалены.';
+	const text = 'Вы уверены, что хотите удалить категорию?';
 
 	return (
 		<DeletePopup
