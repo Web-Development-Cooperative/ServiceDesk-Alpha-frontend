@@ -3,8 +3,8 @@ import { ADAPTER_ROUTES_BREADCRUMBS, ROUTES } from '~~>shared/model/routes';
 const navData = [
 	{
 		id: 1,
-		text: ADAPTER_ROUTES_BREADCRUMBS[ROUTES.APPLICATIONS],
-		path: ROUTES.APPLICATIONS,
+		text: ADAPTER_ROUTES_BREADCRUMBS[ROUTES.MY_APPLICATIONS],
+		path: ROUTES.MY_APPLICATIONS,
 	},
 	{
 		id: 2,
