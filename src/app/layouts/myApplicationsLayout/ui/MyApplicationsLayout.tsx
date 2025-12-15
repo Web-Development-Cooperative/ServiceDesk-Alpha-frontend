@@ -3,6 +3,7 @@ import { Outlet } from 'react-router';
 
 import { ApplicationsSummary } from '~~>features/applicationsSummary';
 import { ApplicationsNavigation } from '~~>features/applicationsNavigation';
+import { MyApplicationsAdd } from '~~>features/myApplicationsAdd';
 import { BaseButton } from '~~>shared/ui/buttons';
 import { Plus } from '~~>shared/ui/icons';
 
@@ -22,7 +23,7 @@ const MyApplicationsLayout = () => {
 			<ApplicationsSummary />
 			<ApplicationsNavigation />
 			<Outlet />
-			{isOpen && <>Модалка</>}
+			{isOpen && <MyApplicationsAdd setIsOpen={setIsOpen} />}
 		</div>
 	);
 };
