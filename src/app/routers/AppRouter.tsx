@@ -6,8 +6,11 @@ import { AuthProvider, GuestProvider } from '~~>app/providers';
 import { ROUTES } from '~~>shared/model/routes';
 
 const HeaderLayout = lazy(() => import('~~>app/layouts/mainLayout'));
+const MyApplicationsLayout = lazy(
+	() => import('~~>app/layouts/myApplicationsLayout')
+);
 const LoginPage = lazy(() => import('~~>pages/login'));
-const ApplicationsPage = lazy(() => import('~~>pages/applications'));
+const MyApplicationsAllPage = lazy(() => import('~~>pages/myApplicationsAll'));
 const BranchesPage = lazy(() => import('~~>pages/branches'));
 const BranchPage = lazy(() => import('~~>pages/branch'));
 const ApplicationsCategoriesPage = lazy(
@@ -73,12 +76,48 @@ const router = createBrowserRouter([
 				),
 			},
 			{
-				path: ROUTES.APPLICATIONS,
+				path: ROUTES.MY_APPLICATIONS,
 				element: (
 					<Suspense fallback={<div>Загрузка компонента...</div>}>
-						<ApplicationsPage />
+						<MyApplicationsLayout />
 					</Suspense>
 				),
+				children: [
+					{
+						index: true,
+						element: <Navigate to={ROUTES.MY_APPLICATIONS_All} />,
+					},
+					{
+						path: ROUTES.MY_APPLICATIONS_All,
+						element: (
+							<Suspense
+								fallback={<div>Загрузка компонента...</div>}
+							>
+								<MyApplicationsAllPage />
+							</Suspense>
+						),
+					},
+					{
+						path: ROUTES.MY_APPLICATIONS_ACTIVE,
+						element: (
+							<Suspense
+								fallback={<div>Загрузка компонента...</div>}
+							>
+								<h1>Active page</h1>
+							</Suspense>
+						),
+					},
+					{
+						path: ROUTES.MY_APPLICATIONS_COMPLETED,
+						element: (
+							<Suspense
+								fallback={<div>Загрузка компонента...</div>}
+							>
+								<h1>Completed page</h1>
+							</Suspense>
+						),
+					},
+				],
 			},
 		],
 	},

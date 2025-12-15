@@ -1,0 +1,7 @@
+.navigation {
+	padding: 30px;
+	border-radius: var(--size-border-radius-table);
+	border: var(--size-border-width-base) solid var(--border-base);
+
+	background-color: var(--white);
+}
