@@ -1,0 +1,28 @@
+.name,
+.category,
+.status,
+.initiator,
+.date {
+	font: var(--base-m);
+}
+.name,
+.category {
+	width: 30%;
+}
+.date {
+	width: 10%;
+}
+.col-value {
+	padding: 0 !important;
+	text-align: start;
+	cursor: pointer;
+}
+.link-name,
+.link-category,
+.link-status,
+.link-initiator,
+.link-date {
+	display: inline-block;
+
+	padding: 22px 40px;
+}

@@ -1,5 +1,14 @@
+import { TableWithPagination } from '~~>widgets/tableWithPagination';
+import { MyApplicationsDisplay } from '~~>features/myApplicationsDisplay';
+import { MyApplicationsPagination } from '~~>features/myApplicationsPagination';
+
 const MyApplicationsAllPage = () => {
-	return <h1>All page</h1>;
+	return (
+		<TableWithPagination>
+			<MyApplicationsDisplay />
+			<MyApplicationsPagination />
+		</TableWithPagination>
+	);
 };
 
 export { MyApplicationsAllPage };
