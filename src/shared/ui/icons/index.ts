@@ -11,3 +11,4 @@ export { Place } from './place/Place';
 export { PopupCross } from './popupCross/PopupCross';
 export { CheckMark } from './checkMark/CheckMark';
 export { Clock } from './clock/Clock';
+export { ClockHistory } from './clockHistory/ClockHistory';

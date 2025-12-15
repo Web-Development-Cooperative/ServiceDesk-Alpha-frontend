@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { clsx } from 'clsx';
 
+import { ROUTES } from '~~>shared/model/routes';
 import { StatusBadge, UniTable } from '~~>shared/ui/others';
 
 import { useMyApplicationsDisplay } from '../lib/useMyApplicationsDisplay';
@@ -26,7 +27,10 @@ const MyApplicationsDisplay = () => {
 			<td
 				className={clsx(styles['col-value'], styles['col-value__name'])}
 			>
-				<Link to={item.id} className={styles['link-name']}>
+				<Link
+					to={`${ROUTES.MY_APPLICATIONS}/${item.id}`}
+					className={styles['link-name']}
+				>
 					<p>Очень медленный интернет</p>
 				</Link>
 			</td>
@@ -36,7 +40,10 @@ const MyApplicationsDisplay = () => {
 					styles['col-value__category']
 				)}
 			>
-				<Link to={item.id} className={styles['link-category']}>
+				<Link
+					to={`${ROUTES.MY_APPLICATIONS}/${item.id}`}
+					className={styles['link-category']}
+				>
 					<p>Технические проблемы и доступы </p>
 				</Link>
 			</td>
@@ -46,7 +53,10 @@ const MyApplicationsDisplay = () => {
 					styles['col-value__status']
 				)}
 			>
-				<Link to={item.id} className={styles['link-status']}>
+				<Link
+					to={`${ROUTES.MY_APPLICATIONS}/${item.id}`}
+					className={styles['link-status']}
+				>
 					<StatusBadge typeBadge="inProgress" />
 				</Link>
 			</td>
@@ -56,14 +66,20 @@ const MyApplicationsDisplay = () => {
 					styles['col-value__initiator']
 				)}
 			>
-				<Link to={item.id} className={styles['link-initiator']}>
+				<Link
+					to={`${ROUTES.MY_APPLICATIONS}/${item.id}`}
+					className={styles['link-initiator']}
+				>
 					<p>Петров П. П.</p>
 				</Link>
 			</td>
 			<td
 				className={clsx(styles['col-value'], styles['col-value__date'])}
 			>
-				<Link to={item.id} className={styles['link-date']}>
+				<Link
+					to={`${ROUTES.MY_APPLICATIONS}/${item.id}`}
+					className={styles['link-date']}
+				>
 					<p>20.09.2025</p>
 				</Link>
 			</td>

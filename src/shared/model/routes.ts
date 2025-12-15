@@ -6,6 +6,7 @@ const ROUTES = {
 	BRANCHES_TYPES: '/branches-types',
 	APPLICATIONS_CATEGORIES: '/application-categories',
 	MY_APPLICATIONS: '/my-applications',
+	APPLICATION: '/my-applications/:application-id',
 	MY_APPLICATIONS_All: '/my-applications/all',
 	MY_APPLICATIONS_ACTIVE: '/my-applications/active',
 	MY_APPLICATIONS_COMPLETED: '/my-applications/completed',
@@ -19,6 +20,7 @@ const ADAPTER_ROUTES_BREADCRUMBS = {
 	'/branches-types': 'Типы филиалов',
 	'/application-categories': 'Категории заявок',
 	'/my-applications': 'Мои заявки',
+	'/my-applications/:application-id': 'Заявка: ',
 	'/my-applications/all': 'Все',
 	'/my-applications/active': 'Активные',
 	'/my-applications/completed': 'Завершенные',
@@ -44,6 +46,9 @@ type PathParams = {
 		objectId: string;
 	};
 	[ROUTES.MY_APPLICATIONS]: {
+		objectId: string;
+	};
+	[ROUTES.APPLICATION]: {
 		objectId: string;
 	};
 	[ROUTES.MY_APPLICATIONS_All]: {

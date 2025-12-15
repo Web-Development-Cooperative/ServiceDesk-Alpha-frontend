@@ -1,0 +1,42 @@
+.application-info {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+	row-gap: 22px;
+}
+.name,
+.addres,
+.code,
+.type,
+.parent {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	column-gap: 20px;
+
+	& > p {
+		&:first-of-type {
+			width: 40%;
+
+			font: var(--button-l);
+			color: var(--text-description);
+		}
+		&:last-of-type {
+			font: var(--base-m);
+		}
+	}
+
+	& > span {
+		justify-content: flex-start;
+		flex-grow: 1;
+	}
+}
+.time {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	column-gap: 10px;
+}
