@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 
+import { ApplicationDelete } from '~~>features/applicationDelete';
 import { ROUTES } from '~~>shared/model/routes';
 import { BaseButton } from '~~>shared/ui/buttons';
 import { Arrow, ClockHistory, PencilEdit, Trashcan } from '~~>shared/ui/icons';
@@ -8,8 +9,13 @@ import { useApplicationControls } from '../../lib/useApplicationControls';
 import styles from './ApplicationControls.module.css';
 
 const ApplicationControls = () => {
-	const { editIsOpen, setEditIsOpen, deleteIsOpen, setDeleteEditIsOpen } =
-		useApplicationControls();
+	const {
+		editIsOpen,
+		setEditIsOpen,
+		deleteIsOpen,
+		setDeleteEditIsOpen,
+		applicationId,
+	} = useApplicationControls();
 
 	return (
 		<div className={styles.controls}>
@@ -36,7 +42,12 @@ const ApplicationControls = () => {
 				</BaseButton>
 			</div>
 			{editIsOpen && <>Модалка</>}
-			{deleteIsOpen && <>Модалка</>}
+			{deleteIsOpen && (
+				<ApplicationDelete
+					setIsOpen={setDeleteEditIsOpen}
+					applicationId={applicationId || '0'}
+				/>
+			)}
 		</div>
 	);
 };
