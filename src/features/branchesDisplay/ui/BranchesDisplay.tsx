@@ -50,18 +50,20 @@ const BranchesDisplay = () => {
 			<td className={clsx(styles['col-value'])}>
 				<Link to={item.id} className={styles['col-actions']}>
 					<BrightBackground
-						onClick={() => {
+						onClick={(e) => {
 							setBranchId(item.id);
 							setEditIsOpen(true);
+							e.preventDefault();
 						}}
 						isAction
 					>
 						<PencilEdit />
 					</BrightBackground>
 					<BrightBackground
-						onClick={() => {
+						onClick={(e) => {
 							setBranchId(item.id);
 							setDeleteEditIsOpen(true);
+							e.preventDefault();
 						}}
 						typeBG="danger"
 						isAction
