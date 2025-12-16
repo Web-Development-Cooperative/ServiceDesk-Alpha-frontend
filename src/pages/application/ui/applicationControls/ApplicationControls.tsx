@@ -1,33 +1,36 @@
 import { Link } from 'react-router';
 
-import { EditBranchFlow } from '~~>widgets/editBranchFlow'; // !!cross-import
-import { BranchDelete } from '~~>features/branchDelete';
-import { BaseButton } from '~~>shared/ui/buttons';
+import { ApplicationDelete } from '~~>features/applicationDelete';
 import { ROUTES } from '~~>shared/model/routes';
-import { Arrow, PencilEdit, Trashcan } from '~~>shared/ui/icons';
+import { BaseButton } from '~~>shared/ui/buttons';
+import { Arrow, ClockHistory, PencilEdit, Trashcan } from '~~>shared/ui/icons';
 
-import { useBranchControls } from '../lib/useBranchControls';
-import styles from './BranchControls.module.css';
+import { useApplicationControls } from '../../lib/useApplicationControls';
+import styles from './ApplicationControls.module.css';
 
-const BranchControls = () => {
+const ApplicationControls = () => {
 	const {
 		editIsOpen,
 		setEditIsOpen,
 		deleteIsOpen,
 		setDeleteEditIsOpen,
-		branchId,
-	} = useBranchControls();
+		applicationId,
+	} = useApplicationControls();
 
-	// TODO добавить название
 	return (
 		<div className={styles.controls}>
-			<Link to={ROUTES.BRANCHES}>
+			<Link to={ROUTES.MY_APPLICATIONS}>
 				<BaseButton typeButton="base" withoutText>
 					<Arrow />
 				</BaseButton>
 			</Link>
 			<h1>Название</h1>
 			<div className={styles['btn-wrapper']}>
+				<Link to="#" className={styles['history-link']}>
+					<BaseButton typeButton="base">
+						<ClockHistory /> История
+					</BaseButton>
+				</Link>
 				<BaseButton
 					onClick={() => setEditIsOpen(true)}
 					typeButton="base"
@@ -38,20 +41,15 @@ const BranchControls = () => {
 					<Trashcan /> Удалить филиал
 				</BaseButton>
 			</div>
-			{editIsOpen && (
-				<EditBranchFlow
-					setIsOpen={setEditIsOpen}
-					branchId={branchId || '0'}
-				/>
-			)}
+			{editIsOpen && <>Модалка</>}
 			{deleteIsOpen && (
-				<BranchDelete
+				<ApplicationDelete
 					setIsOpen={setDeleteEditIsOpen}
-					branchId={branchId || '0'}
+					applicationId={applicationId || '0'}
 				/>
 			)}
 		</div>
 	);
 };
 
-export { BranchControls };
+export { ApplicationControls };

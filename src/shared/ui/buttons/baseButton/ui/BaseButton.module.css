@@ -15,7 +15,8 @@
 		color var(--time-to-do) var(--type-effect);
 
 	& > svg > path {
-		transition: fill var(--time-to-do) var(--type-effect);
+		transition: fill var(--time-to-do) var(--type-effect),
+			stroke var(--time-to-do) var(--type-effect);
 	}
 }
 .without-text {

@@ -15,3 +15,10 @@ export { PaginationBar } from './paginationBar/ui/PaginationBar';
 export { InfoSection } from './infoSection/ui/InfoSection';
 export { BranchPopup } from './branchPopup/ui/BranchPopup';
 export { DeletePopup } from './deletePopup/ui/DeletePopup';
+export { AttachmentItem } from './attachmentItem/ui/AttachmentItem';
+export { CommentFileItem } from './commentFileItem/ui/CommentFileItem';
+export { CommentItem } from './commentItem/ui/CommentItem';
+
+// type
+export type { Attachment } from './attachmentItem/model/attachmentItem.types';
+export type { Comment } from './commentItem/model/commentItem.types';

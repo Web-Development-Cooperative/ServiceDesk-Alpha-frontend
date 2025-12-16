@@ -1,0 +1,21 @@
+.controls {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	column-gap: 20px;
+}
+.btn-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: flex-end;
+	column-gap: 20px;
+	flex-grow: 1;
+}
+.history-link {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: stretch;
+}
