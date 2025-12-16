@@ -67,6 +67,9 @@
 	--background-status-badge-danger: var(--pink-lavender);
 	--background-badge-purple: var(--light-purple);
 	--background-badge-crayola: var(--almond-crayola);
+	--background-icon-jpg: var(--transport-green);
+	--background-icon-pdf: var(--deep-carmine-pink);
+	--background-icon-other: var(--pearl-dark-grey);
 
 	/* border */
 	--border-base: var(--periwinkle-crayola);

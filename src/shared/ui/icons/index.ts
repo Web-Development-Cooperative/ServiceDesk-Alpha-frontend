@@ -12,3 +12,5 @@ export { PopupCross } from './popupCross/PopupCross';
 export { CheckMark } from './checkMark/CheckMark';
 export { Clock } from './clock/Clock';
 export { ClockHistory } from './clockHistory/ClockHistory';
+export { ArrowInstall } from './arrowInstall/ArrowInstall';
+export { PaperClip } from './paperClip/PaperClip';

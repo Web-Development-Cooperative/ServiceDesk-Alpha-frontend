@@ -12,7 +12,7 @@
 	transition: border 0.2s ease-in-out;
 
 	&:focus-within {
-		border: 1px dashed var(--base-accent);
+		border: 1px solid var(--red);
 	}
 
 	& > textarea {

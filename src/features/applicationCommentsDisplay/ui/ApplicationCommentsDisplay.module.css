@@ -1,0 +1,56 @@
+.application-comments {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+	row-gap: 25px;
+}
+.comments {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+	row-gap: 25px;
+
+	max-height: 650px;
+
+	overflow-y: auto;
+}
+.new-cooment {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+	row-gap: 15px;
+
+	padding-top: 20px;
+	border-top: var(--size-border-width-base) solid var(--light-grey);
+}
+.textarea {
+	border-radius: var(--size-border-radius-base);
+	border: var(--size-border-width-base) solid var(--border-base);
+}
+.comment-file-list {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	column-gap: 10px;
+}
+.btn-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	column-gap: 25px;
+
+	margin-top: 15px;
+}
+.attach-file {
+	& path {
+		fill: unset !important;
+	}
+	&:active path {
+		stroke: var(--white);
+	}
+}

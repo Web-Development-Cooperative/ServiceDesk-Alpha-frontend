@@ -1,5 +1,6 @@
 import { ApplicationMainDisplay } from '~~>features/applicationMainDisplay';
 import { ApplicationDataDisplay } from '~~>features/applicationDataDisplay';
+import { ApplicationCommentsDisplay } from '~~>features/applicationCommentsDisplay';
 import { InfoSection } from '~~>shared/ui/others';
 
 import { ApplicationControls } from './applicationControls/ApplicationControls';
@@ -16,7 +17,7 @@ const ApplicationPage = () => {
 				<ApplicationDataDisplay />
 			</InfoSection>
 			<InfoSection title="Комментарии" controls={<p>Комментариев: 3</p>}>
-				<ApplicationDataDisplay />
+				<ApplicationCommentsDisplay />
 			</InfoSection>
 		</div>
 	);

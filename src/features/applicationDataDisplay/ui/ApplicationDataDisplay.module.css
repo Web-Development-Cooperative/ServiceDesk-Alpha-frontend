@@ -5,14 +5,13 @@
 	justify-content: flex-start;
 	row-gap: 22px;
 }
-.name,
-.addres,
-.code,
-.type,
-.parent {
+.workplace,
+.responsible,
+.files,
+.description {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: flex-start;
 	column-gap: 20px;
 
@@ -27,16 +26,12 @@
 			font: var(--base-m);
 		}
 	}
-
-	& > span {
-		justify-content: flex-start;
-		flex-grow: 1;
-	}
 }
-.time {
+.files > ul {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	flex-direction: column;
+	align-items: stretch;
 	justify-content: flex-start;
-	column-gap: 10px;
+	row-gap: 15px;
+	flex-grow: 1;
 }

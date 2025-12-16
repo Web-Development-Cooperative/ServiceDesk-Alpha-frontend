@@ -1,0 +1,26 @@
+.file {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	column-gap: 15px;
+
+	padding: 10px 15px;
+	border-radius: var(--size-border-radius-base);
+	border: var(--size-border-width-base) solid var(--border-base);
+	background-color: var(--background-avatar-card-active);
+}
+.name {
+	font: var(--avatar-m);
+
+	& > span {
+		font: var(--base-s);
+		color: var(--text-description);
+	}
+}
+.cross {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
