@@ -15,6 +15,7 @@ const BranchParentsPagination: FC<{ branchId: string }> = ({ branchId }) => {
 				(data?.content.length || 0) +
 				(data?.size || 0) * (+parentPage - 1)
 			}
+			name="филиалов"
 			currentPage={+parentPage}
 			onPageChange={onPageChange}
 			onPageInc={onPageInc}

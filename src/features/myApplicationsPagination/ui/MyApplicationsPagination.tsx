@@ -13,6 +13,7 @@ const MyApplicationsPagination = () => {
 			cardinality={
 				(data?.content.length || 0) + (data?.size || 0) * (+page - 1)
 			}
+			name="заявок"
 			currentPage={+page}
 			onPageChange={onPageChange}
 			onPageInc={onPageInc}
