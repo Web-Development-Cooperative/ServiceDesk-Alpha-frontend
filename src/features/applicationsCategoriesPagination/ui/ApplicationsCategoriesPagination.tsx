@@ -13,6 +13,7 @@ const ApplicationsCategoriesPagination = () => {
 			cardinality={
 				(data?.content.length || 0) + (data?.size || 0) * (+page - 1)
 			}
+			name="категорий"
 			currentPage={+page}
 			onPageChange={onPageChange}
 			onPageInc={onPageInc}

@@ -13,6 +13,7 @@ const BranchesPagination = () => {
 			cardinality={
 				(data?.content.length || 0) + (data?.size || 0) * (+page - 1)
 			}
+			name="филиалов"
 			currentPage={+page}
 			onPageChange={onPageChange}
 			onPageInc={onPageInc}

@@ -9,10 +9,12 @@ const BranchUsersPagination = () => {
 	return (
 		<PaginationBar
 			maxPage={data?.totalPages || 1}
-			totalElements={data?.totalElements || 0}
+			totalElements={data?.totalElements || 3}
 			cardinality={
-				(data?.content.length || 0) + (data?.size || 0) * (+page - 1)
+				(data?.content.length || 0) + (data?.size || 0) * (+page - 1) ||
+				3
 			}
+			name="сотрудников"
 			currentPage={+page}
 			onPageChange={onPageChange}
 			onPageInc={onPageInc}

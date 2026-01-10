@@ -20,6 +20,7 @@ import type { PaginationBarProps } from '../model/paginationBar.types';
 const PaginationBar: FC<PaginationBarProps> = ({
 	minPage = 1,
 	maxPage,
+	name,
 	totalElements,
 	cardinality,
 	currentPage,
@@ -30,7 +31,7 @@ const PaginationBar: FC<PaginationBarProps> = ({
 	return (
 		<div className={styles['pagination-wrapper']}>
 			<p className={styles.description}>
-				Показано филиалов: {cardinality} из {totalElements}
+				Показано {name || 'филиалов'}: {cardinality} из {totalElements}
 			</p>
 			<div className={styles.pagination}>
 				<BaseButton
